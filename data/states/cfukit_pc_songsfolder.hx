@@ -5,6 +5,8 @@ import FukitUtil;
 var songs:Array<String> = CoolUtil.coolTextFile(Paths.txt('songList'));
 var songDatas:Array<ChartMetaData> = [];
 var songTexts:Array<FunkinText> = [];
+var songStarDiffs:Array<Int> = [];
+var songStarDiffSprites:Array<FunkinSprite> = [];
 var curSelect:Int = 0;
 var prevCurSelect:Int = 0;
 
@@ -37,9 +39,14 @@ function create() {
 
 		songDatas.push(chartMetaData);
 
+		var starDiff = 0;
+		if (chartMetaData.customValues.starDiff != null)
+			starDiff = Std.parseInt(chartMetaData.customValues.starDiff);
+		songStarDiffs.push(starDiff);
+
 		var txt:FunkinText;
 
-		txt = new FunkinText(0, 10, FlxG.width, chartData?.displayName ?? chartMetaData.name, 64, false);
+		txt = new FunkinText(0, 10, FlxG.width, chartMetaData?.displayName ?? chartMetaData.name, 64, false);
 		txt.alignment = 'center';
 		txt.screenCenter();
 		txt.ID = i;
@@ -50,6 +57,45 @@ function create() {
 		songTexts.push(txt);
 
 		i++;
+	}
+
+	var MM = 10;
+	var m = 0;
+
+	starText = new FunkinText(32, FlxG.height - starYPad, 0, 'Stars: ', 32);
+	add(starText);
+	starText.borderSize *= 2;
+
+	while (m < MM) {
+		var star:FunkinSprite = new FunkinSprite().loadGraphic(Paths.image('pc/stars/0'));
+
+		star.ID = m;
+
+		star.y = FlxG.height - star.height - starYPad;
+
+		songStarDiffSprites.push(star);
+		add(star);
+
+		m++;
+	}
+
+	starText.y -= songStarDiffSprites[0].height / 2;
+
+	parseDiff(songStarDiffs[curSelect]);
+}
+
+var starXPad:Float = 24;
+var starYPad:Float = 24;
+var starText:FunkinText;
+
+function parseDiff(starDiff:Int = 0) {
+	for (star in songStarDiffSprites) {
+		var spr = 1;
+
+		if (starDiff <= star.ID)
+			spr = 0;
+
+		star.loadGraphic(Paths.image('pc/stars/$spr'));
 	}
 }
 
@@ -68,6 +114,12 @@ function leaving(leaveScript:Void->Void, sfx = 1, additionalWait = 0.0) {
 }
 
 function update(elapsed:Float) {
+	for (star in songStarDiffSprites) {
+		var targX = (starText.x + starText.width) + starXPad + (star.width * star.ID * 1.5);
+
+		star.x = CoolUtil.fpsLerp(star.x, targX, 0.1);
+	}
+
 	if ((controls.BACK || songs.length == 0) && canSelectStuff) {
 		leaving(function() {
 			FlxG.switchState(new ModState('cfukit_pc'));
@@ -90,8 +142,10 @@ function update(elapsed:Float) {
 			curSelect = 0;
 	}
 
-	if (curSelect != prevCurSelect)
+	if (curSelect != prevCurSelect) {
 		CoolUtil.playMenuSFX();
+		parseDiff(songStarDiffs[curSelect]);
+	}
 
 	if (controls.ACCEPT && canSelectStuff) {
 		canSelectStuff = false;
