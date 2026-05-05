@@ -19,9 +19,6 @@ class FukitUtil {
 		var isPlayingMenuMusic:Bool = FlxG.sound.music != null && FlxG.sound.music.playing && FlxG.sound.music.volume != 0;
 		var canPlayMenuMusic:Bool = getSaveField('fukit_menuMusic');
 
-		trace(isPlayingMenuMusic);
-		trace(canPlayMenuMusic);
-
 		if (isPlayingMenuMusic && !canPlayMenuMusic)
 			FlxG.sound.music.volume = 0;
 
