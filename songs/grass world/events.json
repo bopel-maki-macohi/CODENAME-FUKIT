@@ -27,19 +27,39 @@
 		},
 		{
 			"params": [
-				"countdown",
-				""
-			],
-			"time": 6545.45454545455,
-			"name": "HScript Call"
-		},
-		{
-			"params": [
 				0,
 				125
 			],
 			"time": 6545.45454545455,
 			"name": "CenterCam"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 6545.45454545455,
+			"name": "CountdownStep"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 7090.90909090909,
+			"name": "CountdownStep"
+		},
+		{
+			"params": [
+				2
+			],
+			"time": 7636.36363636364,
+			"name": "CountdownStep"
+		},
+		{
+			"params": [
+				3
+			],
+			"time": 8181.81818181818,
+			"name": "CountdownStep"
 		},
 		{
 			"params": [
