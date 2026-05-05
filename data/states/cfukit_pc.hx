@@ -2,6 +2,9 @@ import flixel.util.FlxTimer;
 
 import funkin.backend.MusicBeatState;
 
+import funkin.editors.EditorPicker;
+import funkin.menus.ModSwitchMenu;
+
 var daText:FunkinText;
 
 function create() {
