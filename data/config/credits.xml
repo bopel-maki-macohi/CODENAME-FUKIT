@@ -1,7 +1,7 @@
 <menu name="Codename Fu-kit" desc="CFK Dev Team">
 
     <github user="bopel-maki-macohi" customName="Maki" desc="Mod Creator"
-        size="150" portrait="true" />
+        size="100" portrait="true" />
 
     <credit name="Nathan Gibson" desc="Menu UI Sounds" url="https://nathangibson.myportfolio.com" />
 

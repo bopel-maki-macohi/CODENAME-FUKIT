@@ -4,10 +4,12 @@ import funkin.backend.MusicBeatState;
 import funkin.editors.EditorPicker;
 import funkin.menus.ModSwitchMenu;
 import funkin.options.OptionsMenu;
+import funkin.menus.credits.CreditsMain;
 
 var daText:FunkinText;
 var settings:FunkinSprite;
 var songsFolder:FunkinSprite;
+var creditsTextFile:FunkinSprite;
 
 function create() {
 	daText = new FunkinText(0, 0, FlxG.width, 'PC', 64, false);
@@ -36,6 +38,13 @@ function create() {
 	songsFolder.alpha = 0.3;
 	add(songsFolder);
 
+	creditsTextFile = new FunkinSprite(1060, 560).loadSprite(Paths.image('pc/credits'));
+
+	creditsTextFile.screenCenter();
+
+	creditsTextFile.alpha = 0.3;
+	add(creditsTextFile);
+
 	FlxG.mouse.visible = true;
 
 	// temp until I have music in
@@ -45,6 +54,7 @@ function create() {
 var canSelectStuff:Bool = true;
 var hoveringOptions:Bool = false;
 var hoveringSongsFolder:Bool = false;
+var hoveringCreditsTextFile:Bool = false;
 
 function leaving(leaveScript:Void->Void) {
 	canSelectStuff = false;
@@ -92,6 +102,23 @@ function update(elapsed:Float) {
 		}
 	} else
 		hoveringSongsFolder = false;
+
+	var overlappingCreds:Bool = FlxG.mouse.overlaps(creditsTextFile);
+	creditsTextFile.alpha = CoolUtil.fpsLerp(creditsTextFile.alpha, overlappingCreds ? 1 : 0.3, 0.1);
+
+	if (overlappingCreds) {
+		if (!hoveringCreditsTextFile && canSelectStuff) {
+			CoolUtil.playMenuSFX(0);
+			hoveringCreditsTextFile = true;
+		}
+
+		if (FlxG.mouse.justReleased && canSelectStuff) {
+			leaving(function() {
+				FlxG.switchState(new CreditsMain());
+			});
+		}
+	} else
+		hoveringCreditsTextFile = false;
 
 	if (controls.DEV_ACCESS) {
 		openSubState(new EditorPicker());
