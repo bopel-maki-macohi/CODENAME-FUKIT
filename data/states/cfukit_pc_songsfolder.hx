@@ -1,6 +1,10 @@
 import flixel.util.FlxGradient;
 
+import funkin.backend.chart.Chart;
+
 var songs:Array<String> = CoolUtil.coolTextFile(Paths.txt('songList'));
+var songDatas:Array<ChartMetaData> = [];
+
 var songTexts:Array<FunkinText> = [];
 var curSelect:Int = 0;
 var prevCurSelect:Int = 0;
@@ -12,7 +16,7 @@ function create() {
 	// temp until I have music in
 	FlxG.sound.music?.stop();
 
-	trace('${songs.length} songs');
+	trace('${songs.length} song(s)');
 
 	if (songs.length == 0) {
 		var txt:FunkinText;
@@ -27,9 +31,16 @@ function create() {
 
 	var i = 0;
 	for (song in songs) {
+		var songID:String = song.split('-')[0];
+		var songVariation:String = song.split('-')[1] ?? null;
+
+		var chartData:ChartMetaData = Chart.loadChartMeta(songID, 'normal', songVariation);
+
+		songDatas.push(chartData);
+
 		var txt:FunkinText;
 
-		txt = new FunkinText(0, 10, FlxG.width, song, 64, false);
+		txt = new FunkinText(0, 10, FlxG.width, chartData?.displayName ?? chartData.name, 64, false);
 		txt.alignment = 'center';
 		txt.color = 0x000000;
 		txt.screenCenter();
@@ -60,7 +71,6 @@ function leaving(leaveScript:Void->Void, sfx = 1, additionalWait = 0.0) {
 
 function update(elapsed:Float) {
 	if ((controls.BACK || songs.length == 0) && canSelectStuff) {
-
 		leaving(function() {
 			FlxG.switchState(new ModState('cfukit_pc'));
 		}, 2, (songs.length == 0) ? 1 : 0);
@@ -112,6 +122,6 @@ function loadSong(song:String) {
 
 	FlxG.sound.music?.stop();
 
-	PlayState.loadSong(songID, 'hard', songVariation, false, false);
+	PlayState.loadSong(songID, 'normal', songVariation, false, false);
 	FlxG.switchState(new PlayState());
 }
