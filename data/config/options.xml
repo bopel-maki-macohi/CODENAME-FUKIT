@@ -1,5 +1,5 @@
 <menu name="Codename Fukit" desc="Codename Fukit Options">
 
-    <checkbox id="fukit_menuMusic" name="Menu Music" />
+    <checkbox id="fukit_menuMusic" name="Menu Music" desc="Toggles the Menu Music" />
 
 </menu>
