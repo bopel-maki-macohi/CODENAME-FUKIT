@@ -1,5 +1,7 @@
 {
-	"customValues": {},
+	"customValues": {
+		"starDiff": "1"
+	},
 	"color": "#FFFFFF",
 	"opponentModeAllowed": true,
 	"icon": "face",
