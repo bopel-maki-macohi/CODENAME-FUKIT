@@ -6,6 +6,7 @@ var songs:Array<String> = CoolUtil.coolTextFile(Paths.txt('songList'));
 var songDatas:Array<ChartMetaData> = [];
 var songTexts:Array<FunkinText> = [];
 var songStarDiffs:Array<Int> = [];
+var prevStarStates:Array<Int> = [];
 var songStarDiffSprites:Array<FunkinSprite> = [];
 var curSelect:Int = 0;
 var prevCurSelect:Int = 0;
@@ -39,9 +40,11 @@ function create() {
 
 		songDatas.push(chartMetaData);
 
-		var starDiff = 0;
-		if (chartMetaData.customValues.starDiff != null)
+		var starDiff = FlxG.random.int(0, 10);
+
+		if (chartMetaData.customValues?.starDiff != null)
 			starDiff = Std.parseInt(chartMetaData.customValues.starDiff);
+
 		songStarDiffs.push(starDiff);
 
 		var txt:FunkinText;
@@ -71,12 +74,15 @@ function create() {
 
 		star.ID = m;
 
-		star.y = FlxG.height - star.height - starYPad;
+		star.x = FlxG.width * (star.ID + 1) * 2;
+		star.y = FlxG.height * (star.ID + 1) * 2;
 
 		songStarDiffSprites.push(star);
 		add(star);
 
 		m++;
+
+		prevStarStates.push(0);
 	}
 
 	starText.y -= songStarDiffSprites[0].height / 2;
@@ -94,6 +100,13 @@ function parseDiff(starDiff:Int = 0) {
 
 		if (starDiff <= star.ID)
 			spr = 0;
+
+		if (prevStarStates[star.ID] != spr) {
+			star.colorTransform.blueMultiplier = 5;
+			star.y -= star.height * FlxG.random.float(0.1, 1);
+		}
+
+		prevStarStates[star.ID] = spr;
 
 		star.loadGraphic(Paths.image('pc/stars/$spr'));
 	}
@@ -116,8 +129,15 @@ function leaving(leaveScript:Void->Void, sfx = 1, additionalWait = 0.0) {
 function update(elapsed:Float) {
 	for (star in songStarDiffSprites) {
 		var targX = (starText.x + starText.width) + starXPad + (star.width * star.ID * 1.5);
+		var targY = FlxG.height - star.height - starYPad;
 
 		star.x = CoolUtil.fpsLerp(star.x, targX, 0.1);
+		star.y = CoolUtil.fpsLerp(star.y, targY, 0.1);
+
+		star.colorTransform.blueMultiplier = CoolUtil.fpsLerp(star.colorTransform.blueMultiplier, 1, 0.1);
+
+		star.colorTransform.redMultiplier = star.colorTransform.blueMultiplier;
+		star.colorTransform.greenMultiplier = star.colorTransform.blueMultiplier;
 	}
 
 	if ((controls.BACK || songs.length == 0) && canSelectStuff) {
