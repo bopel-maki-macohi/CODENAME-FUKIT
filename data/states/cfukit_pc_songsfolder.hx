@@ -1,21 +1,16 @@
 import flixel.util.FlxGradient;
-
 import funkin.backend.chart.Chart;
+import FukitUtil;
 
 var songs:Array<String> = CoolUtil.coolTextFile(Paths.txt('songList'));
 var songDatas:Array<ChartMetaData> = [];
-
 var songTexts:Array<FunkinText> = [];
 var curSelect:Int = 0;
 var prevCurSelect:Int = 0;
 
-var isPlayingMenuMusic:Bool = FlxG.sound.music != null && FlxG.sound.music.playing && FlxG.sound.music.volume > 0;
-
 function create() {
-    if (!isPlayingMenuMusic) {
-        CoolUtil.playMusic(Paths.music('Fukit'), true, 1, true, 61.5);
-    }
-	
+	FukitUtil.playMenuMusic();
+
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
 	gradientLinear.alpha = .3;
