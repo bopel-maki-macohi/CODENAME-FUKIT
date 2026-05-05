@@ -23,8 +23,6 @@ function create() {
 
 	settings = new FunkinSprite(1060, 560).loadSprite(Paths.image('pc/settingsGear'));
 	
-	settings.scale.set(0.5, 0.5);
-	settings.updateHitbox();
 	settings.screenCenter();
 	settings.x -= settings.width * 2;
 
