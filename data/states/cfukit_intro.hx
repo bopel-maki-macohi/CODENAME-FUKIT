@@ -10,6 +10,7 @@ function create()
 	daText.alignment = 'center';
 	daText.color = 0xFFFFFF;
 	daText.x = FlxG.width - daText.width;
+	daText.screenCenter();
 	add(daText);
 	
 	FlxG.mouse.visible = true;
