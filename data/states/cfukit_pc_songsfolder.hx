@@ -18,6 +18,7 @@ function create() {
 	
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
+	gradientLinear.alpha = .3;
 
 	trace('${songs.length} song(s)');
 
@@ -45,7 +46,6 @@ function create() {
 
 		txt = new FunkinText(0, 10, FlxG.width, chartData?.displayName ?? chartData.name, 64, false);
 		txt.alignment = 'center';
-		txt.color = 0x000000;
 		txt.screenCenter();
 		txt.ID = i;
 
@@ -107,7 +107,7 @@ function update(elapsed:Float) {
 	for (text in songTexts) {
 		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
 
-		text.color = 0x000000;
+		text.color = 0xFFFFFF;
 
 		if (curSelect == text.ID)
 			text.color = 0xFFFF00;
