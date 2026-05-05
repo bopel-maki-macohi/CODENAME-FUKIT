@@ -48,7 +48,7 @@ function leaving(leaveScript:Void->Void, sfx = 1) {
 }
 
 function update(elapsed:Float) {
-	if (controls.BACK) {
+	if (controls.BACK && canSelectStuff) {
 		leaving(function() {
 			FlxG.switchState(new ModState('cfukit_pc'));
 		}, 2);
@@ -56,14 +56,14 @@ function update(elapsed:Float) {
 
 	prevCurSelect = curSelect;
 
-	if (controls.UP_R) {
+	if (controls.UP_R && canSelectStuff) {
 		curSelect--;
 
 		if (curSelect < 0)
 			curSelect = songTexts.length - 1;
 	}
 
-	if (controls.DOWN_R) {
+	if (controls.DOWN_R && canSelectStuff) {
 		curSelect++;
 
 		if (curSelect > songTexts.length - 1)
@@ -73,6 +73,12 @@ function update(elapsed:Float) {
 	if (curSelect != prevCurSelect)
 		CoolUtil.playMenuSFX();
 
+	if (controls.ACCEPT && canSelectStuff) {
+		canSelectStuff = false;
+
+		loadSong(songs[curSelect]);
+	}
+
 	for (text in songTexts) {
 		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
 
@@ -81,4 +87,19 @@ function update(elapsed:Float) {
 		if (curSelect == text.ID)
 			text.color = 0xFFFF00;
 	}
+}
+
+function loadSong(song:String) {
+	if (song == null)
+		return;
+
+	trace(song);
+
+	var songID:String = song.split('-')[0];
+	var songVariation:String = song.split('-')[1] ?? null;
+
+	FlxG.sound.music?.stop();
+
+	PlayState.loadSong(songID, 'hard', songVariation, false, false);
+	FlxG.switchState(new PlayState());
 }
