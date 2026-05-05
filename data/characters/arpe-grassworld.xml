@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character y="100" icon="arpe" color="#776D8E">
+	<anim name="idle" anim="arpe anim idle"/>
+	<anim name="singDOWN" anim="arpe anim down" x="18" y="-140"/>
+	<anim name="singRIGHT" anim="arpe anim right" x="-138" y="4"/>
+	<anim name="singLEFT" anim="arpe anim left" x="36" y="-28"/>
+	<anim name="singUP" anim="arpe anim up" x="-31" y="14"/>
+</character>

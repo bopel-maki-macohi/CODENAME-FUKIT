@@ -1,8 +1,6 @@
 {
 	"bookmarks": [],
 	"events": [],
-	"codenameChart": true,
-	"stage": "grassWorld",
 	"strumLines": [
 		{
 			"keyCount": 4,
@@ -195,7 +193,7 @@
 				},
 				{
 					"id": 2,
-					"sLen": 136.363636363632,
+					"sLen": 136.363636363629,
 					"time": 13636.3636363636,
 					"type": 0
 				},
@@ -554,23 +552,25 @@
 					"type": 0
 				}
 			],
-			"position": "dad",
-			"strumScale": 1,
-			"strumSpacing": 1,
 			"visible": true,
-			"type": 0,
-			"characters": [
-				"dad"
-			],
+			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
+			"position": "dad",
+			"strumScale": 1,
 			"vocalsSuffix": "-arpe",
-			"strumLinePos": 0.25
+			"strumLinePos": 0.25,
+			"type": 0,
+			"characters": [
+				"arpe-grassworld"
+			]
 		},
 		{
 			"keyCount": 4,
+			"strumScale": 1,
+			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 1,
@@ -1066,7 +1066,7 @@
 				},
 				{
 					"id": 3,
-					"sLen": 136.363636363647,
+					"sLen": 136.363636363654,
 					"time": 39818.1818181818,
 					"type": 0
 				},
@@ -1137,23 +1137,23 @@
 					"type": 0
 				}
 			],
-			"position": "boyfriend",
-			"strumScale": 1,
-			"strumSpacing": 1,
-			"visible": true,
-			"type": 1,
 			"characters": [
 				"bf"
 			],
+			"type": 1,
+			"visible": true,
+			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
-			"vocalsSuffix": "-bf",
-			"strumLinePos": 0.75
+			"strumLinePos": 0.75,
+			"vocalsSuffix": "-bf"
 		}
 	],
-	"scrollSpeed": 2,
+	"codenameChart": true,
+	"stage": "grassWorld",
 	"chartVersion": "1.6.0",
+	"scrollSpeed": 2,
 	"noteTypes": []
 }

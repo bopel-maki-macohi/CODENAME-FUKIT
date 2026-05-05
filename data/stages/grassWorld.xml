@@ -4,7 +4,7 @@
 	<sprite name="back mountain"       x="-360" y="0"    sprite="back mountain"      scroll="0.5" />
 	<sprite name="platform"       x="0" y="600"    sprite="platform"      scroll="1" />
 	<girlfriend />
-	<dad />
+	<dad x="200" y="200" />
 	<boyfriend />
 	<sprite name="front mountain left"       x="-400" y="100"    sprite="front mountain left"      scroll="0.8" />
 	<sprite name="front mountain right"       x="1180" y="100"    sprite="front mountain right"      scroll="0.8" />
