@@ -28,15 +28,23 @@ function create() {
 	settings.alpha = 0.3;
 	add(settings);
 
+	songsFolder = new FunkinSprite(1060, 560).loadSprite(Paths.image('pc/songsFolder'));
+
+	songsFolder.screenCenter();
+	songsFolder.x += songsFolder.width * 1.25;
+
+	songsFolder.alpha = 0.3;
+	add(songsFolder);
+
 	FlxG.mouse.visible = true;
 
 	// temp until I have music in
-	if (FlxG.sound.music != null)
-		FlxG.sound.music.stop();
+	FlxG.sound.music?.stop();
 }
 
 var canSelectStuff:Bool = true;
 var hoveringOptions:Bool = false;
+var hoveringSongsFolder:Bool = false;
 
 function update(elapsed:Float) {
 	var overlapsSettings:Bool = FlxG.mouse.overlaps(settings);
@@ -61,6 +69,29 @@ function update(elapsed:Float) {
 		}
 	} else
 		hoveringOptions = false;
+
+	var overlapssongsFolder:Bool = FlxG.mouse.overlaps(songsFolder);
+	songsFolder.alpha = CoolUtil.fpsLerp(songsFolder.alpha, overlapssongsFolder ? 1 : 0.3, 0.1);
+
+	if (overlapssongsFolder) {
+		if (!hoveringSongsFolder && canSelectStuff) {
+			CoolUtil.playMenuSFX(0);
+			hoveringSongsFolder = true;
+		}
+
+		if (FlxG.mouse.justReleased && canSelectStuff) {
+			canSelectStuff = false;
+			CoolUtil.playMenuSFX(1);
+
+			FlxTween.tween(FlxG.camera, {zoom: 1.1, alpha: .75}, .75, {ease: FlxEase.sineOut});
+
+			new FlxTimer().start(0.75, function(timer) {
+				persistantUpdate = true;
+				FlxG.switchState(new ModState('cfukit_pc_songsfolder'));
+			});
+		}
+	} else
+		hoveringSongsFolder = false;
 
 	if (controls.DEV_ACCESS) {
 		openSubState(new EditorPicker());
