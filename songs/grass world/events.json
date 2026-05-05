@@ -1,0 +1,189 @@
+{
+	"events": [
+		{
+			"params": [
+				1,
+				true,
+				4,
+				"CLASSIC",
+				"In"
+			],
+			"time": 0,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 2181.81818181818,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 4363.63636363636,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				"countdown",
+				""
+			],
+			"time": 6545.45454545455,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
+				"centerCam",
+				""
+			],
+			"time": 6545.45454545455,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 8727.27272727273,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 13090.9090909091,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				"centerCam",
+				""
+			],
+			"time": 17454.5454545455,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 21818.1818181818,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 24000,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 26181.8181818182,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1,
+				"hey",
+				false,
+				"NONE"
+			],
+			"time": 27818.1818181818,
+			"name": "Play Animation"
+		},
+		{
+			"params": [
+				0.05,
+				"camGame"
+			],
+			"time": 27818.1818181818,
+			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 28363.6363636364,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0,
+				"hey",
+				false,
+				"NONE"
+			],
+			"time": 30000,
+			"name": "Play Animation"
+		},
+		{
+			"params": [
+				0.05,
+				"camGame"
+			],
+			"time": 30000,
+			"name": "Add Camera Zoom"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 30545.4545454545,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 32727.2727272727,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				"centerCam",
+				""
+			],
+			"time": 34909.0909090909,
+			"name": "HScript Call"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 39272.7272727273,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 41454.5454545455,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				1
+			],
+			"time": 43636.3636363636,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				0
+			],
+			"time": 45818.1818181818,
+			"name": "Camera Movement"
+		},
+		{
+			"params": [
+				"centerCam",
+				""
+			],
+			"time": 48545.4545454546,
+			"name": "HScript Call"
+		}
+	]
+}
