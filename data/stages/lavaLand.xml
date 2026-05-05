@@ -1,0 +1,35 @@
+<!DOCTYPE codename-engine-stage>
+<stage folder="stages/lavaLand/" name="lavaLand" zoom="0.8" startCamPosY="400" startCamPosX="800">
+	<solid name="void" color="#54463F" width="1920" height="1080" scroll="0" x="-200" y="-300" />
+
+	<sprite scroll="0.5" sprite="lavafall" name="lavafall" type="loop" y="-100" scaley="2">
+		<anim name="idle" anim="lavafall" loop="true" />
+	</sprite>
+
+	<sprite scroll="0.5" sprite="lavafall glow" name="lavafallGlow" type="loop" x="-100" y="-400"
+		scaley="2">
+		<anim name="idle" anim="lavafall glow" loop="true" />
+		<property name="blend" type="int" value="0" />
+	</sprite>
+
+	<sprite x="-239" sprite="lava glow" y="580" type="none" scalex="1.29" scaley="2.48"
+		name="lavaGlowBack">
+		<property name="blend" type="int" value="0" />
+
+	</sprite>
+
+	<girlfriend x="893" y="122" />
+	<dad x="140" y="150" />
+	<boyfriend x="850" y="5" />
+	<sprite x="-320" sprite="ground" y="697" type="none" name="ground" />
+
+	<sprite x="-330" scroll="0.8" sprite="lava" y="830" type="none" scalex="1.4" scaley="1.4"
+		name="lava1" />
+	<!-- <sprite x="-184" scroll="0.7" sprite="lava" y="806" type="none" scalex="1.5" name="lava2" /> -->
+
+	<sprite x="-437" scroll="0.69" sprite="lava glow" y="610" type="none" scalex="2" scaley="4"
+		name="lavaGlowFront">
+		<property name="blend" type="int" value="0" />
+
+	</sprite>
+</stage>

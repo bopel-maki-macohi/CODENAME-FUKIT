@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="lavafall.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="lavafall0000" x="4" y="4" width="298" height="997" frameX="0" frameY="0" frameWidth="299" frameHeight="1010"/>
+	<SubTexture name="lavafall0001" x="4" y="4" width="298" height="997" frameX="0" frameY="0" frameWidth="299" frameHeight="1010"/>
+	<SubTexture name="lavafall0002" x="4" y="4" width="298" height="997" frameX="0" frameY="0" frameWidth="299" frameHeight="1010"/>
+	<SubTexture name="lavafall0003" x="4" y="4" width="298" height="997" frameX="0" frameY="0" frameWidth="299" frameHeight="1010"/>
+	<SubTexture name="lavafall0004" x="310" y="4" width="295" height="987" frameX="-4" frameY="-23" frameWidth="299" frameHeight="1010"/>
+	<SubTexture name="lavafall0005" x="310" y="4" width="295" height="987" frameX="-4" frameY="-23" frameWidth="299" frameHeight="1010"/>
+	<SubTexture name="lavafall0006" x="310" y="4" width="295" height="987" frameX="-4" frameY="-23" frameWidth="299" frameHeight="1010"/>
+	<SubTexture name="lavafall0007" x="310" y="4" width="295" height="987" frameX="-4" frameY="-23" frameWidth="299" frameHeight="1010"/>
+</TextureAtlas>

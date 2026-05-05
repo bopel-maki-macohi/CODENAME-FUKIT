@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="lavafall glow.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="lavafall glow0000" x="4" y="4" width="475" height="1174" frameX="0" frameY="0" frameWidth="477" frameHeight="1188"/>
+	<SubTexture name="lavafall glow0001" x="4" y="4" width="475" height="1174" frameX="0" frameY="0" frameWidth="477" frameHeight="1188"/>
+	<SubTexture name="lavafall glow0002" x="4" y="4" width="475" height="1174" frameX="0" frameY="0" frameWidth="477" frameHeight="1188"/>
+	<SubTexture name="lavafall glow0003" x="4" y="4" width="475" height="1174" frameX="0" frameY="0" frameWidth="477" frameHeight="1188"/>
+	<SubTexture name="lavafall glow0004" x="487" y="4" width="472" height="1164" frameX="-5" frameY="-24" frameWidth="477" frameHeight="1188"/>
+	<SubTexture name="lavafall glow0005" x="487" y="4" width="472" height="1164" frameX="-5" frameY="-24" frameWidth="477" frameHeight="1188"/>
+	<SubTexture name="lavafall glow0006" x="487" y="4" width="472" height="1164" frameX="-5" frameY="-24" frameWidth="477" frameHeight="1188"/>
+	<SubTexture name="lavafall glow0007" x="487" y="4" width="472" height="1164" frameX="-5" frameY="-24" frameWidth="477" frameHeight="1188"/>
+</TextureAtlas>
