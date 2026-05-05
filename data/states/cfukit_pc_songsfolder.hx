@@ -1,8 +1,7 @@
 import flixel.util.FlxGradient;
 
 function create() {
-	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFCEDEEB]);
-	gradientLinear.alpha = 0.6;
+	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
 
 	// temp until I have music in
