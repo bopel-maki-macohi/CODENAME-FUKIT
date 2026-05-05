@@ -18,7 +18,7 @@ function leaving(leaveScript:Void->Void) {
 	canSelectStuff = false;
 	CoolUtil.playMenuSFX(1);
 
-	FlxTween.tween(FlxG.camera, {zoom: 1.1, alpha: .75}, .75, {ease: FlxEase.sineOut});
+	FlxTween.tween(FlxG.camera, {alpha: 0}, .75, {ease: FlxEase.sineOut});
 
 	new FlxTimer().start(0.75, function(timer) {
 		if (leaveScript != null)
