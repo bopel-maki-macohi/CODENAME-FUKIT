@@ -14,9 +14,9 @@ function create() {
 
 var canSelectStuff:Bool = true;
 
-function leaving(leaveScript:Void->Void) {
+function leaving(leaveScript:Void->Void, sfx = 1) {
 	canSelectStuff = false;
-	CoolUtil.playMenuSFX(1);
+	CoolUtil.playMenuSFX(sfx);
 
 	FlxTween.tween(FlxG.camera, {alpha: 0}, .75, {ease: FlxEase.sineOut});
 
@@ -30,6 +30,6 @@ function update(elapsed:Float) {
 	if (controls.BACK) {
 		leaving(function() {
 			FlxG.switchState(new ModState('cfukit_pc'));
-		});
+		}, 2);
 	}
 }
