@@ -1,6 +1,6 @@
 {
 	"events": [],
-	"stage": "grassWorld",
+	"stage": "lavaLand",
 	"codenameChart": true,
 	"scrollSpeed": 3,
 	"chartVersion": "1.6.0",
