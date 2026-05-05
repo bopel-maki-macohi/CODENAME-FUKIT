@@ -1,8 +1,9 @@
 <!DOCTYPE codename-engine-character>
-<character y="100" icon="arpe" color="#776D8E">
+<character y="100" icon="arpe" color="#776D8E" applyStageMatrix="true">
 	<anim name="idle" anim="arpe anim idle"/>
-	<anim name="singDOWN" anim="arpe anim down" x="18" y="-140"/>
-	<anim name="singRIGHT" anim="arpe anim right" x="-138" y="4"/>
-	<anim name="singLEFT" anim="arpe anim left" x="36" y="-28"/>
-	<anim name="singUP" anim="arpe anim up" x="-31" y="14"/>
+	<anim name="singDOWN" anim="arpe anim down" label="true" x="28" y="42"/>
+	<anim name="singRIGHT" anim="arpe anim right" label="true" x="111" y="46"/>
+	<anim name="singLEFT" anim="arpe anim left" label="true" x="16" y="45"/>
+	<anim name="singUP" anim="arpe anim up" label="true" x="32" y="16"/>
+	<anim name="hey" anim="hey!!" label="true" x="34" y="49"/>
 </character>
