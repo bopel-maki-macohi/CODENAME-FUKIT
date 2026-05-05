@@ -33,13 +33,13 @@ function create() {
 		var songID:String = song.split('-')[0];
 		var songVariation:String = song.split('-')[1] ?? null;
 
-		var chartData:ChartMetaData = Chart.loadChartMeta(songID, 'normal', songVariation);
+		var chartMetaData:ChartMetaData = Chart.loadChartMeta(songID, 'normal', songVariation);
 
-		songDatas.push(chartData);
+		songDatas.push(chartMetaData);
 
 		var txt:FunkinText;
 
-		txt = new FunkinText(0, 10, FlxG.width, chartData?.displayName ?? chartData.name, 64, false);
+		txt = new FunkinText(0, 10, FlxG.width, chartData?.displayName ?? chartMetaData.name, 64, false);
 		txt.alignment = 'center';
 		txt.screenCenter();
 		txt.ID = i;
