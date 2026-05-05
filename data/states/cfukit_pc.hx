@@ -6,7 +6,6 @@ import funkin.menus.ModSwitchMenu;
 import funkin.options.OptionsMenu;
 
 var daText:FunkinText;
-
 var settings:FunkinSprite;
 var songsFolder:FunkinSprite;
 
@@ -22,7 +21,7 @@ function create() {
 	add(gradientLinear);
 
 	settings = new FunkinSprite(1060, 560).loadSprite(Paths.image('pc/settingsGear'));
-	
+
 	settings.screenCenter();
 	settings.x -= settings.width * 2;
 
@@ -30,12 +29,38 @@ function create() {
 	add(settings);
 
 	FlxG.mouse.visible = true;
+
+	// temp until I have music in
+	if (FlxG.sound.music != null)
+		FlxG.sound.music.stop();
 }
 
+var canSelectStuff:Bool = true;
+var hoveringOptions:Bool = false;
+
 function update(elapsed:Float) {
-	
-	var overlapsButton:Bool = FlxG.mouse.overlaps(settings);
-	settings.alpha = CoolUtil.fpsLerp(settings.alpha, overlapsButton ? 1 : 0.3, 0.1);
+	var overlapsSettings:Bool = FlxG.mouse.overlaps(settings);
+	settings.alpha = CoolUtil.fpsLerp(settings.alpha, overlapsSettings ? 1 : 0.3, 0.1);
+
+	if (overlapsSettings) {
+		if (!hoveringOptions && canSelectStuff) {
+			CoolUtil.playMenuSFX(0);
+			hoveringOptions = true;
+		}
+
+		if (FlxG.mouse.justReleased && canSelectStuff) {
+			canSelectStuff = false;
+			CoolUtil.playMenuSFX(1);
+
+			FlxTween.tween(FlxG.camera, {zoom: 1.1, alpha: .75}, .75, {ease: FlxEase.sineOut});
+
+			new FlxTimer().start(0.75, function(timer) {
+				persistantUpdate = true;
+				FlxG.switchState(new OptionsMenu());
+			});
+		}
+	} else
+		hoveringOptions = false;
 
 	if (controls.DEV_ACCESS) {
 		openSubState(new EditorPicker());
