@@ -34,12 +34,9 @@
 			"name": "HScript Call"
 		},
 		{
-			"params": [
-				"centerCam",
-				""
-			],
+			"params": [],
 			"time": 6545.45454545455,
-			"name": "HScript Call"
+			"name": "CenterCam"
 		},
 		{
 			"params": [
@@ -56,12 +53,9 @@
 			"name": "Camera Movement"
 		},
 		{
-			"params": [
-				"centerCam",
-				""
-			],
+			"params": [],
 			"time": 17454.5454545455,
-			"name": "HScript Call"
+			"name": "CenterCam"
 		},
 		{
 			"params": [
@@ -142,12 +136,9 @@
 			"name": "Camera Movement"
 		},
 		{
-			"params": [
-				"centerCam",
-				""
-			],
+			"params": [],
 			"time": 34909.0909090909,
-			"name": "HScript Call"
+			"name": "CenterCam"
 		},
 		{
 			"params": [

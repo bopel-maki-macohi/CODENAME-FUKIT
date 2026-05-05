@@ -1,0 +1,14 @@
+{
+    "params": [
+        {
+            "name": "X Offset",
+            "type": "Float(-999999, 999999, 0.05, 2)",
+            "defaultValue": 0.0
+        },
+        {
+            "name": "Y Offset",
+            "type": "Float(-999999, 999999, 0.05, 2)",
+            "defaultValue": 0.0
+        }
+    ]
+}
