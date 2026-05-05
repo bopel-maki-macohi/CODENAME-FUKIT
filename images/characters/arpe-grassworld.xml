@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="arpe-grassworld.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="arpe anim down0000" x="1578" y="4" width="350" height="437"/>
+	<SubTexture name="arpe anim idle0000" x="4" y="4" width="468" height="590"/>
+	<SubTexture name="arpe anim left0000" x="480" y="4" width="442" height="568"/>
+	<SubTexture name="arpe anim right0000" x="930" y="4" width="339" height="597"/>
+	<SubTexture name="arpe anim up0000" x="1277" y="4" width="293" height="580"/>
+</TextureAtlas>
