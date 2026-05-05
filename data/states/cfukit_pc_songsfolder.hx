@@ -14,6 +14,17 @@ function create() {
 
 	trace('${songs.length} songs');
 
+	if (songs.length == 0) {
+		var txt:FunkinText;
+
+		txt = new FunkinText(0, 10, FlxG.width, 'No songs', 64, false);
+		txt.alignment = 'center';
+		txt.color = 0x000000;
+		txt.screenCenter();
+
+		add(txt);
+	}
+
 	var i = 0;
 	for (song in songs) {
 		var txt:FunkinText;
@@ -35,23 +46,24 @@ function create() {
 
 var canSelectStuff:Bool = true;
 
-function leaving(leaveScript:Void->Void, sfx = 1) {
+function leaving(leaveScript:Void->Void, sfx = 1, additionalWait = 0.0) {
 	canSelectStuff = false;
 	CoolUtil.playMenuSFX(sfx);
 
-	FlxTween.tween(FlxG.camera, {alpha: 0}, .75, {ease: FlxEase.sineOut});
+	FlxTween.tween(FlxG.camera, {alpha: 0}, .75, {startDelay: additionalWait, ease: FlxEase.sineOut});
 
-	new FlxTimer().start(0.75, function(timer) {
+	new FlxTimer().start(0.75 + additionalWait, function(timer) {
 		if (leaveScript != null)
 			leaveScript();
 	});
 }
 
 function update(elapsed:Float) {
-	if (controls.BACK && canSelectStuff) {
+	if ((controls.BACK || songs.length == 0) && canSelectStuff) {
+
 		leaving(function() {
 			FlxG.switchState(new ModState('cfukit_pc'));
-		}, 2);
+		}, 2, (songs.length == 0) ? 1 : 0);
 	}
 
 	prevCurSelect = curSelect;
