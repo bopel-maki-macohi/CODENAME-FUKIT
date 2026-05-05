@@ -11,7 +11,13 @@ var settings:FunkinSprite;
 var songsFolder:FunkinSprite;
 var creditsTextFile:FunkinSprite;
 
+var isPlayingMenuMusic:Bool = FlxG.sound.music != null && FlxG.sound.music.playing && FlxG.sound.music.volume > 0;
+
 function create() {
+    if (!isPlayingMenuMusic) {
+        CoolUtil.playMusic(Paths.music('Fukit'), true, 1, true, 61.5);
+    }
+
 	daText = new FunkinText(0, 0, FlxG.width, 'PC', 64, false);
 	daText.alignment = 'center';
 	daText.color = 0xFFFFFF;
@@ -46,9 +52,6 @@ function create() {
 	add(creditsTextFile);
 
 	FlxG.mouse.visible = true;
-
-	// temp until I have music in
-	FlxG.sound.music?.stop();
 }
 
 var canSelectStuff:Bool = true;

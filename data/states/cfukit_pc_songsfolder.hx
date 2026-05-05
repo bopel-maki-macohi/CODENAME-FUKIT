@@ -9,12 +9,15 @@ var songTexts:Array<FunkinText> = [];
 var curSelect:Int = 0;
 var prevCurSelect:Int = 0;
 
+var isPlayingMenuMusic:Bool = FlxG.sound.music != null && FlxG.sound.music.playing && FlxG.sound.music.volume > 0;
+
 function create() {
+    if (!isPlayingMenuMusic) {
+        CoolUtil.playMusic(Paths.music('Fukit'), true, 1, true, 61.5);
+    }
+	
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
-
-	// temp until I have music in
-	FlxG.sound.music?.stop();
 
 	trace('${songs.length} song(s)');
 
