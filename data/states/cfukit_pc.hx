@@ -46,6 +46,18 @@ var canSelectStuff:Bool = true;
 var hoveringOptions:Bool = false;
 var hoveringSongsFolder:Bool = false;
 
+function leaving(leaveScript:Void->Void) {
+	canSelectStuff = false;
+	CoolUtil.playMenuSFX(1);
+
+	FlxTween.tween(FlxG.camera, {zoom: 1.1, alpha: .75}, .75, {ease: FlxEase.sineOut});
+
+	new FlxTimer().start(0.75, function(timer) {
+		if (leaveScript != null)
+			leaveScript();
+	});
+}
+
 function update(elapsed:Float) {
 	var overlapsSettings:Bool = FlxG.mouse.overlaps(settings);
 	settings.alpha = CoolUtil.fpsLerp(settings.alpha, overlapsSettings ? 1 : 0.3, 0.1);
@@ -57,13 +69,7 @@ function update(elapsed:Float) {
 		}
 
 		if (FlxG.mouse.justReleased && canSelectStuff) {
-			canSelectStuff = false;
-			CoolUtil.playMenuSFX(1);
-
-			FlxTween.tween(FlxG.camera, {zoom: 1.1, alpha: .75}, .75, {ease: FlxEase.sineOut});
-
-			new FlxTimer().start(0.75, function(timer) {
-				persistantUpdate = true;
+			leaving(function() {
 				FlxG.switchState(new OptionsMenu());
 			});
 		}
@@ -80,13 +86,7 @@ function update(elapsed:Float) {
 		}
 
 		if (FlxG.mouse.justReleased && canSelectStuff) {
-			canSelectStuff = false;
-			CoolUtil.playMenuSFX(1);
-
-			FlxTween.tween(FlxG.camera, {zoom: 1.1, alpha: .75}, .75, {ease: FlxEase.sineOut});
-
-			new FlxTimer().start(0.75, function(timer) {
-				persistantUpdate = true;
+			leaving(function() {
 				FlxG.switchState(new ModState('cfukit_pc_songsfolder'));
 			});
 		}
