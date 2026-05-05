@@ -1,11 +1,15 @@
 import flixel.util.FlxGradient;
 
+var songs:Array<String> = CoolUtil.coolTextFile(Paths.txt('songList'));
+
 function create() {
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
 
 	// temp until I have music in
 	FlxG.sound.music?.stop();
+
+	trace(songs);
 }
 
 var canSelectStuff:Bool = true;
