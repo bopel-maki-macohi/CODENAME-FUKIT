@@ -5,7 +5,7 @@
 	<char name="boyfriend" position="right" />
 
 	<!-- Lines -->
-	<line char="dad" speed="0.04">Eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</line>
+	<line char="dad" speed="0.04">I bet I could beat you in a rap</line>
 	<line char="boyfriend" speed="0.04">Bep</line>
 
 
