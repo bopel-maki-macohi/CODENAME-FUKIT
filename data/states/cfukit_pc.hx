@@ -15,11 +15,11 @@ var creditsTextFile:FunkinSprite;
 function create() {
 	FukitUtil.playMenuMusic();
 
-	daText = new FunkinText(0, 0, FlxG.width, 'PC', 64, false);
+	daText = new FunkinText(0, 16, FlxG.width, 'CODENAME FUKIT ${FukitUtil.MOD_VERSION}', 32, false);
 	daText.alignment = 'center';
 	daText.color = 0xFFFFFF;
 	daText.x = FlxG.width - daText.width;
-	// add(daText);
+	add(daText);
 
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0x7F4E1E61, 0xFF0D4A50]);
 	gradientLinear.alpha = 0.6;

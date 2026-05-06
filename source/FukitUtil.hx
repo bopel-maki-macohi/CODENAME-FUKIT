@@ -1,4 +1,6 @@
 class FukitUtil {
+	public static var MOD_VERSION:String = Flags.customFlags.get('MOD_VERSION');
+
 	public static function initSaveField(field:String, defaultValue:Dynamic = null) {
 		if (Reflect.field(FlxG.save.data, field) == null && defaultValue != null) {
 			trace('Setting Save Field "$field" to "$defaultValue"');
