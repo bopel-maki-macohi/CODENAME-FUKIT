@@ -190,10 +190,15 @@ function loadSong(song:String) {
 	trace(song);
 
 	var songID:String = song.split('-')[0];
-	var songVariation:String = song.split('-')[1] ?? null;
+	var songVariation:String = song.split('-')[1];
 
 	FlxG.sound.music?.stop();
 
-	PlayState.loadSong(songID, 'normal', songVariation, false, false);
+	// PlayState.loadSong(songID, 'normal', songVariation, false, false);
+	PlayState.loadWeek({
+		name: songID,
+		id: songID,
+		songs: [{name: songID, variation: songVariation}]
+	}, 'normal');
 	FlxG.switchState(new PlayState());
 }

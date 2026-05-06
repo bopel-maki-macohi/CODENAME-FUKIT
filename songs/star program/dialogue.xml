@@ -1,0 +1,12 @@
+<!DOCTYPE codename-engine-dialogue>
+<dialogue box="default">
+	<!-- All characters -->
+	<char name="op" char="senpai" position="left" />
+	<char name="bf" char="pixelBf" position="right" />
+
+	<!-- Lines -->
+	<line char="op" speed="0.04">I bet I could beat you in a rap</line>
+	<line char="bf" speed="0.04">Bep</line>
+
+
+</dialogue>
