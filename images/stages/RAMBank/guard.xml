@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="guard.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="guard0000" x="4" y="4" width="142" height="250" frameX="0" frameY="-16" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0001" x="4" y="4" width="142" height="250" frameX="0" frameY="-16" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0002" x="4" y="4" width="142" height="250" frameX="0" frameY="-16" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0003" x="292" y="4" width="137" height="252" frameX="-3" frameY="-16" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0004" x="292" y="4" width="137" height="252" frameX="-3" frameY="-16" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0005" x="154" y="4" width="130" height="266" frameX="-13" frameY="-2" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0006" x="154" y="4" width="130" height="266" frameX="-13" frameY="-2" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0007" x="437" y="4" width="130" height="264" frameX="-8" frameY="0" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0008" x="437" y="4" width="130" height="264" frameX="-8" frameY="0" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0009" x="437" y="4" width="130" height="264" frameX="-8" frameY="0" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0010" x="437" y="4" width="130" height="264" frameX="-8" frameY="0" frameWidth="143" frameHeight="268"/>
+	<SubTexture name="guard0011" x="437" y="4" width="130" height="264" frameX="-8" frameY="0" frameWidth="143" frameHeight="268"/>
+</TextureAtlas>

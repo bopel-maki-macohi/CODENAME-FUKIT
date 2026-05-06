@@ -1,0 +1,14 @@
+<stage zoom="1.0" name="RAMBank" folder="stages/RAMBank/" startCamPosY="200" startCamPosX="800">
+	<solid name="void" color="#2D3235" width="1920" height="1080" scroll="0" x="-200" y="-300" />
+
+	<sprite name="guard" sprite="guard" x="920" y="400" type="beat">
+		<anim name="idle" anim="guard" loop="true" fps="12"/>
+	</sprite>
+
+	<sprite name="doorway" sprite="doorway" x="-420" y="-60" scalex="-1.5" scaley="1.5" />
+	<sprite name="ground" sprite="ground" x="-360" y="640" />
+
+	<girlfriend x="-1000000000" />
+	<dad />
+	<boyfriend x="790" y="-20" camxoffset="-200" camyoffset="-90" />
+</stage>

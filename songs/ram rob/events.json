@@ -10,6 +10,13 @@
 		},
 		{
 			"params": [
+				10
+			],
+			"time": 0,
+			"name": "RAMBankGuard"
+		},
+		{
+			"params": [
 				0
 			],
 			"time": 12521.7391304348,
@@ -63,6 +70,13 @@
 		},
 		{
 			"params": [
+				1.5
+			],
+			"time": 27130.4347826087,
+			"name": "RAMBankGuard"
+		},
+		{
+			"params": [
 				0,
 				"clear",
 				true,
@@ -102,6 +116,13 @@
 		},
 		{
 			"params": [
+				7
+			],
+			"time": 37565.2173913044,
+			"name": "RAMBankGuard"
+		},
+		{
+			"params": [
 				0
 			],
 			"time": 45913.0434782609,
@@ -129,6 +150,13 @@
 			"params": [
 				1
 			],
+			"time": 48000,
+			"name": "RAMBankGuard"
+		},
+		{
+			"params": [
+				1
+			],
 			"time": 50086.9565217391,
 			"name": "Camera Movement"
 		},
@@ -146,6 +174,27 @@
 			],
 			"time": 54260.8695652174,
 			"name": "CenterCam"
+		},
+		{
+			"params": [
+				2
+			],
+			"time": 54260.8695652174,
+			"name": "RAMBankGuard"
+		},
+		{
+			"params": [
+				3
+			],
+			"time": 58434.7826086957,
+			"name": "RAMBankGuard"
+		},
+		{
+			"params": [
+				4
+			],
+			"time": 62608.6956521739,
+			"name": "RAMBankGuard"
 		},
 		{
 			"params": [

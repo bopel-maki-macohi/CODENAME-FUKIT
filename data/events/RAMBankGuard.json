@@ -1,0 +1,9 @@
+{
+    "params": [
+        {
+            "name": "Duration (Seconds)",
+            "type": "Float(-999999, 999999, 0.05, 2)",
+            "defaultValue": 1.0
+        }
+    ]
+}
