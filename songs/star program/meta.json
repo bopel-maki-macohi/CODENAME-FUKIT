@@ -1,13 +1,16 @@
 {
-	"opponentModeAllowed": false,
-	"icon": "face",
+	"customValues": {
+		"starDiff": "2"
+	},
+	"color": "#9271FD",
+	"opponentModeAllowed": true,
+	"icon": "alikit",
 	"difficulties": [
 		"normal"
 	],
-	"color": "#9271FD",
-	"coopAllowed": false,
+	"coopAllowed": true,
 	"stepsPerBeat": 4,
-	"displayName": "star program",
+	"displayName": "Star Program",
 	"beatsPerMeasure": 4,
 	"needsVoices": true,
 	"bpm": 100
