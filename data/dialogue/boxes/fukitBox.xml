@@ -1,0 +1,20 @@
+<dialoguebox y="-10" x="0">
+    <!--
+        Node containing all text settings
+    -->
+    <text font="vcr.ttf" x="175" y="275" width="925" color="#000000" size="40"/>
+
+    <!--
+        All positions for characters
+    -->
+    <charpos name="left" x="-150" y="184" flipBubble="true" />
+    <charpos name="middle" x="0" y="184" />
+    <charpos name="right" x="350" y="184" />
+
+    <!--
+        All animations for the dialogue box
+        For example, if you wanna add an "angry" animation, add an animation named "angry" (box idle), and "angry-open" (not needed, for box apparition)
+    -->
+    <anim name="normal" anim="dialogue chill" fps="24" loop="true"/>
+    <anim name="normal-open" anim="dialogue open" fps="24" y="63" x="5" />
+</dialoguebox>

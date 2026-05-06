@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="fukitBox.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="dialogue chill0000" x="1006" y="4" width="1002" height="292" frameX="-5" frameY="-6" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue chill0001" x="1006" y="4" width="1002" height="292" frameX="-5" frameY="-6" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue chill0002" x="1006" y="4" width="1002" height="292" frameX="-5" frameY="-6" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue chill0003" x="1006" y="4" width="1002" height="292" frameX="-5" frameY="-6" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue chill0004" x="1006" y="304" width="1000" height="290" frameX="0" frameY="0" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue chill0005" x="1006" y="304" width="1000" height="290" frameX="0" frameY="0" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue chill0006" x="1006" y="304" width="1000" height="290" frameX="0" frameY="0" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue chill0007" x="1006" y="304" width="1000" height="290" frameX="0" frameY="0" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue open0000" x="446" y="352" width="91" height="139" frameX="-929" frameY="0" frameWidth="1020" frameHeight="377"/>
+	<SubTexture name="dialogue open0001" x="446" y="352" width="91" height="139" frameX="-929" frameY="0" frameWidth="1020" frameHeight="377"/>
+	<SubTexture name="dialogue open0002" x="4" y="352" width="434" height="286" frameX="-573" frameY="-58" frameWidth="1020" frameHeight="377"/>
+	<SubTexture name="dialogue open0003" x="4" y="352" width="434" height="286" frameX="-573" frameY="-58" frameWidth="1020" frameHeight="377"/>
+	<SubTexture name="dialogue open0004" x="4" y="4" width="994" height="340" frameX="-11" frameY="-37" frameWidth="1020" frameHeight="377"/>
+	<SubTexture name="dialogue open0005" x="4" y="4" width="994" height="340" frameX="-11" frameY="-37" frameWidth="1020" frameHeight="377"/>
+	<SubTexture name="dialogue open0006" x="1006" y="4" width="1002" height="292" frameX="0" frameY="-69" frameWidth="1007" frameHeight="298"/>
+	<SubTexture name="dialogue open0007" x="1006" y="4" width="1002" height="292" frameX="0" frameY="-69" frameWidth="1007" frameHeight="298"/>
+</TextureAtlas>

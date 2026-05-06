@@ -1,12 +1,12 @@
 <!DOCTYPE codename-engine-dialogue>
-<dialogue box="default">
+<dialogue box="fukitBox">
 	<!-- All characters -->
-	<char name="op" char="senpai" position="left" />
-	<char name="bf" char="pixelBf" position="right" />
+	<char name="dad" position="left" />
+	<char name="boyfriend" position="right" />
 
 	<!-- Lines -->
-	<line char="op" speed="0.04">I bet I could beat you in a rap</line>
-	<line char="bf" speed="0.04">Bep</line>
+	<line char="dad" speed="0.04">Eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee</line>
+	<line char="boyfriend" speed="0.04">Bep</line>
 
 
 </dialogue>
