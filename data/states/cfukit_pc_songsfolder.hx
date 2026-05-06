@@ -103,7 +103,7 @@ function parseDiff(starDiff:Int = 0) {
 
 		if (prevStarStates[star.ID] != spr) {
 			star.colorTransform.blueMultiplier = 5;
-			star.y -= star.height * FlxG.random.float(0.1, 1);
+			star.y -= star.height * Math.abs(starDiff - (star.ID + 0)) * .25;
 		}
 
 		prevStarStates[star.ID] = spr;
