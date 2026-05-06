@@ -1,5 +1,9 @@
 # 1.2 - 5/6/2026
 
+- **Added STAR PROGRAM Song!**
+
+- Changed how the difficulty stars bounce when they change *slightly*
+
 # 1.1 - 5/5/2026
 
 - **Added LAVA PROTOCOL Song!**
