@@ -3,6 +3,7 @@
 - **Added STAR PROGRAM Song!**
     - First song with dialogue!
 
+- NyxTheShield is now credited in the credits menu
 - The Folir icon is now shifted up
 - Changed how the difficulty stars bounce when they change
 
