@@ -1,7 +1,7 @@
 {
 	"events": [],
-	"codenameChart": true,
 	"stage": "space",
+	"codenameChart": true,
 	"scrollSpeed": 3,
 	"chartVersion": "1.6.0",
 	"strumLines": [
@@ -705,23 +705,25 @@
 					"type": 0
 				}
 			],
-			"position": "dad",
-			"strumScale": 1,
-			"strumSpacing": 1,
 			"visible": true,
-			"type": 0,
-			"characters": [
-				"folir-lavaprotocol"
-			],
+			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
-			"vocalsSuffix": "-starkit",
-			"strumLinePos": 0.25
+			"position": "dad",
+			"strumScale": 1,
+			"vocalsSuffix": "-alikit",
+			"strumLinePos": 0.25,
+			"type": 0,
+			"characters": [
+				"alikit-starprogram"
+			]
 		},
 		{
 			"keyCount": 4,
+			"strumScale": 1,
+			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 2,
@@ -1468,20 +1470,18 @@
 					"type": 0
 				}
 			],
-			"position": "boyfriend",
-			"strumScale": 1,
-			"strumSpacing": 1,
-			"visible": true,
-			"type": 1,
 			"characters": [
 				"bf"
 			],
+			"type": 1,
+			"visible": true,
+			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
-			"vocalsSuffix": "-bf",
-			"strumLinePos": 0.75
+			"strumLinePos": 0.75,
+			"vocalsSuffix": "-bf"
 		}
 	],
 	"noteTypes": []

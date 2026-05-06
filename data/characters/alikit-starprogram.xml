@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character camx="-250" icon="alikit" color="#CC9966" applyStageMatrix="true">
+	<anim name="idle" anim="alikit anim idle"/>
+	<anim name="singDOWN" anim="alikit anim down" x="14" y="-177"/>
+	<anim name="singRIGHT" anim="alikit anim right" x="-7" y="-10"/>
+	<anim name="singLEFT" anim="alikit anim left" x="111" y="-15"/>
+	<anim name="singUP" anim="alikit anim up" x="47" y="-45"/>
+</character>
