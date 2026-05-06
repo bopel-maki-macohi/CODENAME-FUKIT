@@ -1,3 +1,4 @@
 # arpe!
 grass world
 lava protocol
+star program
