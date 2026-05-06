@@ -1,7 +1,7 @@
 {
 	"events": [],
-	"stage": "lavaLand",
 	"codenameChart": true,
+	"stage": "lavaLand",
 	"scrollSpeed": 3,
 	"chartVersion": "1.6.0",
 	"strumLines": [
@@ -28,7 +28,7 @@
 				},
 				{
 					"id": 0,
-					"sLen": 88.2352941176464,
+					"sLen": 88.2352941176455,
 					"time": 3176.47058823529,
 					"type": 0
 				},
@@ -526,7 +526,7 @@
 				},
 				{
 					"id": 2,
-					"sLen": 264.705882352944,
+					"sLen": 264.705882352941,
 					"time": 30705.8823529412,
 					"type": 0
 				},
@@ -669,23 +669,25 @@
 					"type": 0
 				}
 			],
-			"position": "dad",
-			"strumScale": 1,
-			"strumSpacing": 1,
 			"visible": true,
-			"type": 0,
-			"characters": [
-				"arpe-grassworld"
-			],
+			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
+			"position": "dad",
+			"strumScale": 1,
 			"vocalsSuffix": "-folir",
-			"strumLinePos": 0.25
+			"strumLinePos": 0.25,
+			"type": 0,
+			"characters": [
+				"folir-lavaprotocol"
+			]
 		},
 		{
 			"keyCount": 4,
+			"strumScale": 1,
+			"position": "boyfriend",
 			"notes": [
 				{
 					"id": 1,
@@ -815,7 +817,7 @@
 				},
 				{
 					"id": 3,
-					"sLen": 88.2352941176468,
+					"sLen": 88.235294117645,
 					"time": 6352.94117647059,
 					"type": 0
 				},
@@ -1265,7 +1267,7 @@
 				},
 				{
 					"id": 2,
-					"sLen": 264.705882352944,
+					"sLen": 264.705882352948,
 					"time": 32117.6470588235,
 					"type": 0
 				},
@@ -1348,20 +1350,18 @@
 					"type": 0
 				}
 			],
-			"position": "boyfriend",
-			"strumScale": 1,
-			"strumSpacing": 1,
-			"visible": true,
-			"type": 1,
 			"characters": [
 				"bf"
 			],
+			"type": 1,
+			"visible": true,
+			"strumSpacing": 1,
 			"strumPos": [
 				0,
 				50
 			],
-			"vocalsSuffix": "-bf",
-			"strumLinePos": 0.75
+			"strumLinePos": 0.75,
+			"vocalsSuffix": "-bf"
 		}
 	],
 	"noteTypes": []
