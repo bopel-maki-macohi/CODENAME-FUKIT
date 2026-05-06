@@ -1,14 +1,27 @@
 import FukitUtil;
 
-function preCreate() {
-	if (!FlxG.sound.music?.playing)
-		CoolUtil.playMusic(Paths.music('Fukit'), true, 0, true, 120);
-}
-
+// Fixed FreakyMenu playing when moving to the Gameplay menu in the options menu
 function postCreate() {
-	FukitUtil.playMenuMusic();
-
 	onMenuClosed.add(function() {
+		if (FlxG.sound.music?.volume > 0 && !FukitUtil.getSaveField('fukit_menuMusic'))
+			FlxG.sound.music.stop();
+
 		FukitUtil.playMenuMusic();
 	});
+
+	onMenuClosed.dispatch();
+}
+
+function postUpdate() {
+	if (controls.ACCEPT) {
+		for (i => thing in tree) {
+			var thingName = Reflect.field(thing, 'name');
+
+			// trace('$i / $thingName : ${Reflect.field(thing, 'name')}');
+
+			// if (thingName == 'Gameplay')
+				// thing.__metronome = FlxG.sound.load(Paths.music('Fukit'));
+			FlxG.sound.music.stop();
+		}
+	}
 }

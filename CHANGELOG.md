@@ -3,6 +3,7 @@
 - **Added STAR PROGRAM Song!**
     - First song with dialogue!
 
+- Fixed FreakyMenu playing when moving to and out the Gameplay menu in the options menu
 - Fixed flickers of "FreakyMenu" appearing in places when the Menu Music is disabled
 - NyxTheShield is now credited in the credits menu
 - The Folir icon is now shifted up
