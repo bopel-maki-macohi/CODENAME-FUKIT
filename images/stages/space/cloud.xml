@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="cloud.png">
+	<!-- Created with Adobe Animate version 23.0.0.407 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="nimbus0000" x="4" y="267" width="749" height="255" frameX="0" frameY="-2" frameWidth="761" frameHeight="257"/>
+	<SubTexture name="nimbus0001" x="4" y="267" width="749" height="255" frameX="0" frameY="-2" frameWidth="761" frameHeight="257"/>
+	<SubTexture name="nimbus0002" x="4" y="267" width="749" height="255" frameX="0" frameY="-2" frameWidth="761" frameHeight="257"/>
+	<SubTexture name="nimbus0003" x="4" y="267" width="749" height="255" frameX="0" frameY="-2" frameWidth="761" frameHeight="257"/>
+	<SubTexture name="nimbus0004" x="4" y="4" width="754" height="255" frameX="-7" frameY="0" frameWidth="761" frameHeight="257"/>
+	<SubTexture name="nimbus0005" x="4" y="4" width="754" height="255" frameX="-7" frameY="0" frameWidth="761" frameHeight="257"/>
+	<SubTexture name="nimbus0006" x="4" y="4" width="754" height="255" frameX="-7" frameY="0" frameWidth="761" frameHeight="257"/>
+	<SubTexture name="nimbus0007" x="4" y="4" width="754" height="255" frameX="-7" frameY="0" frameWidth="761" frameHeight="257"/>
+</TextureAtlas>

@@ -1,0 +1,46 @@
+{
+	"events": [],
+	"stage": "space",
+	"codenameChart": true,
+	"scrollSpeed": 3,
+	"chartVersion": "1.6.0",
+	"strumLines": [
+		{
+			"keyCount": 4,
+			"strumScale": 1,
+			"position": "dad",
+			"notes": [],
+			"characters": [
+				"folir-lavaprotocol"
+			],
+			"type": 0,
+			"visible": true,
+			"strumSpacing": 1,
+			"strumPos": [
+				0,
+				50
+			],
+			"strumLinePos": 0.25,
+			"vocalsSuffix": "-starkit"
+		},
+		{
+			"keyCount": 4,
+			"strumScale": 1,
+			"position": "boyfriend",
+			"notes": [],
+			"characters": [
+				"bf"
+			],
+			"type": 1,
+			"visible": true,
+			"strumSpacing": 1,
+			"strumPos": [
+				0,
+				50
+			],
+			"strumLinePos": 0.75,
+			"vocalsSuffix": "-bf"
+		}
+	],
+	"noteTypes": []
+}
