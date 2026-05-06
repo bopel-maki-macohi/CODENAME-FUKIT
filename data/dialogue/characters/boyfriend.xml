@@ -1,3 +1,3 @@
-<character x="285">
+<character x="285" y="-50">
     <anim name="normal" anim="normal" fps="24" />
 </character>
