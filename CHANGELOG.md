@@ -3,6 +3,7 @@
 - **Added STAR PROGRAM Song!**
     - First song with dialogue!
 
+- The Folir icon is now shifted up
 - Changed how the difficulty stars bounce when they change
 
 # 1.1 - 5/5/2026
