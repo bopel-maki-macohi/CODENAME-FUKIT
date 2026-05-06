@@ -80,10 +80,10 @@ function postCreate() {
 
 	var charShader = new CustomShader("dropshadowShader");
 
-    charShader.brightness = -55;
-    charShader.hue = -35;
-    charShader.saturation = -38;
-    charShader.contrast = -26;
+    charShader.brightness = -11;
+    charShader.hue = -22;
+    charShader.saturation = -40;
+    charShader.contrast = -20;
 
 	dad.shader = charShader;
     cloudDAD.shader = charShader;
