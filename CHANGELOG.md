@@ -3,8 +3,7 @@
 - **Added STAR PROGRAM Song!**
     - First song with dialogue!
 
-<!-- - Songs loaded via the PC Songs Folder are now loaded as weeks -->
-- Changed how the difficulty stars bounce when they change *slightly*
+- Changed how the difficulty stars bounce when they change
 
 # 1.1 - 5/5/2026
 
