@@ -194,11 +194,6 @@ function loadSong(song:String) {
 
 	FlxG.sound.music?.stop();
 
-	// PlayState.loadSong(songID, 'normal', songVariation, false, false);
-	PlayState.loadWeek({
-		name: songID,
-		id: songID,
-		songs: [{name: songID, variation: songVariation}]
-	}, 'normal');
+	PlayState.loadSong(songID, 'normal', songVariation, false, false);
 	FlxG.switchState(new PlayState());
 }
