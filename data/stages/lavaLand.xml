@@ -19,8 +19,8 @@
 	</sprite>
 
 	<girlfriend x="893" y="122" />
-	<dad x="140" y="150" />
-	<boyfriend x="850" y="5" />
+	<dad x="250" y="150"/>
+	<boyfriend x="920" y="5" />
 	<sprite x="-320" sprite="ground" y="697" type="none" name="ground" />
 
 	<sprite x="-330" scroll="0.8" sprite="lava" y="830" type="none" scalex="1.4" scaley="1.4"

@@ -1,5 +1,5 @@
 <!DOCTYPE codename-engine-character>
-<character camx="-275" icon="folir" color="#CC9999" applyStageMatrix="true">
+<character icon="folir" color="#CC9999" applyStageMatrix="true">
 	<anim name="idle" anim="folir anim idle"/>
 	<anim name="singDOWN" anim="folir anim down" y="-14"/>
 	<anim name="singRIGHT" anim="folir anim right" x="-9" y="-11"/>
