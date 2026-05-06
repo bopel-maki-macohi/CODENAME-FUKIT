@@ -59,9 +59,11 @@ function onStageXMLParsed() {
 function postCreate() {
 	cloudDAD.x = dad.getGraphicMidpoint().x;
 	cloudDAD.y = dad.getGraphicMidpoint().y + (cloudDAD.height * 1);
+	cloudDAD.animation.frameIndex = FlxG.random.int(0, 7);
 
 	cloudBF.x = bf.getGraphicMidpoint().x;
 	cloudBF.y = bf.getGraphicMidpoint().y + (cloudBF.height * 1.5);
+	cloudBF.animation.frameIndex = FlxG.random.int(0, 7);
 
 	urath.screenCenter();
 
