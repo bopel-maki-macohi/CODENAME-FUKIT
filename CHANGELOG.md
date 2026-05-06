@@ -1,3 +1,5 @@
+# 1.2 - 5/6/2026
+
 # 1.1 - 5/5/2026
 
 - **Added LAVA PROTOCOL Song!**
