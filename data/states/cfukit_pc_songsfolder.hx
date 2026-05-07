@@ -3,14 +3,11 @@ import funkin.backend.chart.Chart;
 import FukitUtil;
 
 var songList:Array<String> = [];
-
 var songDatas:Array<ChartMetaData> = [];
 var songTexts:Array<FunkinText> = [];
-
 var songStarDiffs:Array<Int> = [];
 var prevStarStates:Array<Int> = [];
 var songStarDiffSprites:Array<FunkinSprite> = [];
-
 var curSelect:Int = 0;
 var prevCurSelect:Int = -10;
 
@@ -156,6 +153,13 @@ function update(elapsed:Float)
 	if (controls.UP_R) changeSelection(-1);
 	if (controls.DOWN_R) changeSelection(1);
 
+	for (text in songTexts)
+	{
+		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
+
+		text.color = (curSelect == text.ID) ? 0xFFFF00 : 0xFFFFFF;
+	}
+
 	if ((controls.BACK || songList.length == 0) && canSelectStuff)
 	{
 		leaving(function()
@@ -184,13 +188,6 @@ function changeSelection(amount:Int)
 	{
 		CoolUtil.playMenuSFX();
 		parseDiff(songStarDiffs[curSelect]);
-	}
-
-	for (text in songTexts)
-	{
-		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
-
-		text.color = (curSelect == text.ID) ? 0xFFFF00 : 0xFFFFFF;
 	}
 }
 
