@@ -5,7 +5,7 @@ import ArgUtil;
 function new() {
 	FukitUtil.initSaveField('fukit_menuMusic', true);
 	FukitUtil.initSaveField('fukit_cutscenes', true);
-	FukitUtil.setSaveField('fukit_devMode', Paths.getFolderDirectories('.').contains('.dev'));
+	FukitUtil.setSaveField('fukit_devMode', Paths.getFolderDirectories('.').contains('.dev') || ArgUtil.argPairNotCancelled(ArgUtil.FORCE_DEVMODE));
 
 	Framerate.debugMode = 0;
 
