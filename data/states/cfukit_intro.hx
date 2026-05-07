@@ -8,6 +8,13 @@ var daText:FunkinText;
 var delay:Float = 0;
 
 function create() {
+	if (ArgUtil.argPairNotCancelled(ArgUtil.SKIP_INTRO))
+		goToNextState();
+	else
+		intro();
+}
+
+function intro() {
 	daText = new FunkinText(0, 0, FlxG.width, 'Hewo', 64, false);
 	daText.alignment = 'center';
 	daText.color = 0xFFFFFF;
