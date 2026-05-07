@@ -9,6 +9,6 @@
 	<sprite name="ground" sprite="ground" x="-360" y="640" />
 
 	<girlfriend x="-1000000000" />
-	<dad x="-50" y="150" camxoffset="100" />
-	<boyfriend x="790" y="-20" camxoffset="-200" camyoffset="-90" />
+	<dad x="-50" y="150" camxoffset="200" />
+	<boyfriend x="790" y="-20" camxoffset="-200" camyoffset="-80" />
 </stage>
