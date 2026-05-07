@@ -80,25 +80,21 @@
 		},
 		{
 			"params": [
-				1
+				1,
+				true,
+				4,
+				"CLASSIC",
+				"In"
 			],
 			"time": 64800,
 			"name": "Camera Movement"
 		},
 		{
 			"params": [
-				0,
-				0
-			],
-			"time": 67200,
-			"name": "CenterCam"
-		},
-		{
-			"params": [
 				"spaceZoomAway",
-				"5,"
+				"5,3"
 			],
-			"time": 67200,
+			"time": 64800,
 			"name": "HScript Call"
 		},
 		{
@@ -108,8 +104,16 @@
 				true,
 				"LOCK"
 			],
-			"time": 67200,
+			"time": 64800,
 			"name": "Play Animation"
+		},
+		{
+			"params": [
+				0,
+				0
+			],
+			"time": 67200,
+			"name": "CenterCam"
 		}
 	]
 }

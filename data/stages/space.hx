@@ -94,6 +94,9 @@ function postCreate()
 	cloudDAD.x = dad.getGraphicMidpoint().x;
 	cloudBF.x = bf.getGraphicMidpoint().x;
 
+	spaceMic.screenCenter();
+	spaceMic.x = -FlxG.width;
+
 	urath.screenCenter();
 
 	urath.velocity.x = 0;
@@ -115,6 +118,7 @@ function postCreate()
 	charShader.saturation = -40;
 	charShader.contrast = -20;
 
+	spaceMic.shader = charShader;
 	dad.shader = charShader;
 	cloudDAD.shader = charShader;
 
@@ -150,4 +154,10 @@ function spaceZoomAway(durStr:String, bsdStr:String)
 
 	bfCloudTween = FlxTween.tween(cloudBF, {x: cloudBF.x - FlxG.width * 4}, duration, {startDelay: bfStartDelay, ease: ease});
 	dadCloudTween = FlxTween.tween(cloudDAD, {x: cloudDAD.x - FlxG.width * 4}, duration, {ease: ease});
+
+	spaceMic.velocity.x = 0;
+	spaceMic.acceleration.x = 80;
+	spaceMic.moves = true;
+	spaceMic.angularAcceleration = 5;
+	spaceMic.angle = FlxG.random.float(0, 360);
 }
