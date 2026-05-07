@@ -1,0 +1,8 @@
+<!DOCTYPE codename-engine-character>
+<character icon="folir" color="#CC9999" applyStageMatrix="true">
+	<anim name="idle" anim="folir RAMRob anim idle"/>
+	<anim name="singDOWN" anim="folir RAMRob anim down" x="-9" y="11"/>
+	<anim name="singRIGHT" anim="folir RAMRob anim right" x="-6" y="5"/>
+	<anim name="singLEFT" anim="folir RAMRob anim left" x="-4" y="20"/>
+	<anim name="singUP" anim="folir RAMRob anim up" y="-5"/>
+</character>
