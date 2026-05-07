@@ -80,6 +80,11 @@ function update(elapsed:Float) {
 
 		if (FlxG.mouse.justReleased && canSelectStuff) {
 			leaving(function() {
+				if (!FukitUtil.getSaveField('fukit_menuMusic')) {
+					FlxG.sound.playMusic(Paths.music('Fukit'));
+					FlxG.sound.music.volume = 0;
+				}
+
 				FlxG.switchState(new OptionsMenu());
 			});
 		}

@@ -17,7 +17,7 @@ function onStageXMLParsed() {
 		particle.updateHitbox();
 
 		particle.scrollFactor.x = FlxG.random.float(0.1, 1);
-		particle.scrollFactor.y = particle.scrollFactor.x;
+		particle.scrollFactor.y = FlxG.random.float(0.1, 1);
 
 		starsBG.add(particle);
 	}
@@ -26,6 +26,7 @@ function onStageXMLParsed() {
 	starsBG.height = FlxG.height * 2;
 
 	starsBG.x = -480 * 2;
+	starsBG.y = -360;
 
 	var minS = 6 * .1;
 	var maxS = 6 * .4;

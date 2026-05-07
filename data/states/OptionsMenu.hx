@@ -1,6 +1,5 @@
 import FukitUtil;
 
-// Fixed FreakyMenu playing when moving to the Gameplay menu in the options menu
 function postCreate() {
 	onMenuClosed.add(function() {
 		if (FlxG.sound.music?.volume > 0 && !FukitUtil.getSaveField('fukit_menuMusic'))
@@ -20,7 +19,7 @@ function postUpdate() {
 			// trace('$i / $thingName : ${Reflect.field(thing, 'name')}');
 
 			// if (thingName == 'Gameplay')
-				// thing.__metronome = FlxG.sound.load(Paths.music('Fukit'));
+			// thing.__metronome = FlxG.sound.load(Paths.music('Fukit'));
 			FlxG.sound.music.stop();
 		}
 	}

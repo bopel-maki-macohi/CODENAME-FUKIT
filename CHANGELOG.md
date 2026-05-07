@@ -1,5 +1,6 @@
 # 1.2 - 5/6/2026
 
+- **Added RAM ROB Song!**
 - **Added STAR PROGRAM Song!**
     - First song with dialogue!
 

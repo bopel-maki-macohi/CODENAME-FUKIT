@@ -1,7 +1,7 @@
-<stage zoom="0.8" name="space" folder="stages/space/" startCamPosY="400" startCamPosX="800">
+<stage zoom="0.6" name="space" folder="stages/space/" startCamPosY="-102400" startCamPosX="800">
 	<girlfriend x="-1000000000" />
     
-	<sprite name="urath" sprite="urath"/>
+	<sprite name="urath" sprite="urath" scroll="0.1"/>
 
 	<sprite sprite="cloud" scaley="2" scalex="2" name="cloudDAD" type="loop">
 		<anim name="idle" anim="nimbus" loop="true" />
