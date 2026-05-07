@@ -1,5 +1,7 @@
 # Unreleased
 
+- Fixed missing transition in from the PC Menu when the intro length has been extended
+
 - Running with the arg "-SKIP_INTRO" will skip the intro scene
 - Running with the arg "-DISABLE_MUSIC" will now set the Menu Music option to false
 - Running with the arg "-FORCE_DEVMODE" will now force developer mode

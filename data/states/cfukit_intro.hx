@@ -35,7 +35,7 @@ function intro() {
 }
 
 function goToNextState() {
-	MusicBeatState.skipTransIn = true;
+	MusicBeatState.skipTransIn = delay == 0;
 	MusicBeatState.skipTransOut = delay == 0;
 
 	FlxG.switchState(new ModState('cfukit_pc'));
