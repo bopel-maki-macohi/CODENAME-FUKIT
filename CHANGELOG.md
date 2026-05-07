@@ -3,6 +3,7 @@
 ## Songs
 
 - STAR PROGRAM : Alikit now has an animation for when BF and him zoom away at the end of the song
+  - His mic will appear after (cause of the event, not the animation)
 - Cutscenes are disabled in charting mode now
 - STAR PROGRAM : BF and Alikit speed away now at the end of the song
 
