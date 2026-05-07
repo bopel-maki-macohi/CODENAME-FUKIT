@@ -1,5 +1,12 @@
 # Unreleased
 
+- Fixed flicker of "freakyMenu" when leaving a song via the pause menu
+    - I might be losing it but I hear it
+    
+- Fixed Music (when enabled) stopping when selecting an options sub menu
+- All Haxe / Script files have been cleaned up!
+    - The state scripts changed the most
+
 - The mouse is now hidden in the Song Select
 - Song metadata is now loaded correctly in the Song Select
 
@@ -10,12 +17,6 @@
 - New Arguments:
     - `-FORCE_DEVMODE` : Forces Developer mode
     - `-SKIP_INTRO` : Skips the intro state
-
-    - `-FORCE_DISABLE_MUSIC` : Forces Menu Music to be disabled
-    - `-FORCE_ENABLE_MUSIC` : Forces Menu Music to be enabled
-
-    - `-FORCE_DISABLE_CUTSCENES` : Forces Song Cutscenes to be disabled
-    - `-FORCE_ENABLE_CUTSCENES` : Forces Song Cutscenes to be enabled
 
 - If no songs are loaded via a text file then the Song Select will now set it's song list to "test"
 - The Song Select now displays it's song list depending on a `data/songs` file (default: `volume1` if it can)

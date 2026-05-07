@@ -1,6 +1,8 @@
+import FukitUtil;
+
 function onSelectOption(e)
 {
 	var name = Reflect.field(e, 'name');
 
-	if (name.toLowerCase() == 'exit to menu') CoolUtil.playMusic(Paths.music('Fukit'), true, 0, true, 120);
+	if (name.toLowerCase() == 'exit to menu') CoolUtil.playMusic(Paths.music('Fukit'), true, (FukitUtil.getSaveField('fukit_menuMusic')) ? 1 : 0, true, 120);
 }

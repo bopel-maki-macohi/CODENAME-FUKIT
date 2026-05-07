@@ -4,18 +4,16 @@ class ArgUtil
 {
 	public static var OXIPNG:Array<String> = ['OXIPNG', 'NO_OXIPNG'];
 	public static var FORCE_DEVMODE:Array<String> = ['FORCE_DEVMODE'];
-
-	public static var FORCE_DISABLE_MUSIC:Array<String> = ['FORCE_DISABLE_MUSIC', 'FORCE_ENABLE_MUSIC'];
-	public static var FORCE_DISABLE_CUTSCENES:Array<String> = ['FORCE_DISABLE_CUTSCENES', 'FORCE_DISABLE_CUTSCENES'];
-
-	public static var FORCE_ENABLE_MUSIC:Array<String> = [FORCE_DISABLE_MUSIC[1], FORCE_DISABLE_MUSIC[0]];
-	public static var FORCE_ENABLE_CUTSCENES:Array<String> = [FORCE_DISABLE_CUTSCENES[1], FORCE_DISABLE_CUTSCENES[0]];
-
 	public static var SKIP_INTRO:Array<String> = ['SKIP_INTRO'];
 
 	public static function logExistingArgPairs()
 	{
-		logArgPairs([OXIPNG, FORCE_DEVMODE, FORCE_DISABLE_MUSIC, FORCE_DISABLE_CUTSCENES, FORCE_ENABLE_MUSIC, FORCE_ENABLE_CUTSCENES, SKIP_INTRO]);
+		var pairs:Array<Array<String>> = [];
+		pairs.push(OXIPNG);
+		pairs.push(FORCE_DEVMODE);
+		pairs.push(SKIP_INTRO);
+
+		logArgPairs(pairs);
 	}
 
 	public static function logArgPairs(argPairs:Array<Array<String>>)
