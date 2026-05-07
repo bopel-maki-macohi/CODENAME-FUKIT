@@ -13,14 +13,30 @@ class FukitUtil
 		}
 	}
 
-	public static function setSaveField(field:String, value:Dynamic = null)
+	public static function initFukitSaveField(field:String, defaultValue:Dynamic = null)
 	{
-		Reflect.setField(FlxG.save.data, field, value);
+		if (Reflect.field(FlxG.save.data.fukit, field) == null && defaultValue != null)
+		{
+			trace('Setting Fukit Save Field "$field" to "$defaultValue"');
+			setFukitSaveField(field, defaultValue);
+		}
 	}
+
+	public static function setSaveField(field:String, value:Dynamic = null) Reflect.setField(FlxG.save.data, field, value);
+	public static function setFukitSaveField(field:String, value:Dynamic = null) Reflect.setField(FlxG.save.data.fukit, field, value);
 
 	public static function getSaveField(field:String, defaultValue:Dynamic = null)
 	{
 		var field = Reflect.field(FlxG.save.data, field);
+
+		if (field != null) return field;
+		else
+			return defaultValue;
+	}
+
+	public static function getFukitSaveField(field:String, defaultValue:Dynamic = null)
+	{
+		var field = Reflect.field(FlxG.save.data.fukit, field);
 
 		if (field != null) return field;
 		else

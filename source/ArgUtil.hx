@@ -5,6 +5,7 @@ class ArgUtil
 	public static var OXIPNG:Array<String> = ['OXIPNG', 'NO_OXIPNG'];
 	public static var FORCE_DEVMODE:Array<String> = ['FORCE_DEVMODE'];
 	public static var SKIP_INTRO:Array<String> = ['SKIP_INTRO'];
+	public static var FORCE_VERSIONCHANGEWARNING:Array<String> = ['FORCE_VERSIONCHANGEWARNING'];
 
 	public static function logExistingArgPairs()
 	{
@@ -12,6 +13,7 @@ class ArgUtil
 		pairs.push(OXIPNG);
 		pairs.push(FORCE_DEVMODE);
 		pairs.push(SKIP_INTRO);
+		pairs.push(FORCE_VERSIONCHANGEWARNING);
 
 		logArgPairs(pairs);
 	}

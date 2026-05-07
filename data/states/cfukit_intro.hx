@@ -14,6 +14,14 @@ function create()
 		intro();
 }
 
+function goToNextState()
+{
+	MusicBeatState.skipTransIn = delay == 0;
+	MusicBeatState.skipTransOut = delay == 0;
+
+	FlxG.switchState(new ModState('cfukit_pc'));
+}
+
 function intro()
 {
 	daText = new FunkinText(0, 0, FlxG.width, 'Hewo', 64, false);
@@ -27,20 +35,32 @@ function intro()
 
 	if (ArgUtil.argPairNotCancelled(ArgUtil.OXIPNG) && FukitUtil.getSaveField('fukit_devMode')) oxipng();
 
-	daText.screenCenter();
-
-	new FlxTimer().start(2 + delay, function(timer)
+	new FlxTimer().start(delay, function(timer)
 	{
-		goToNextState();
+		if (!FukitUtil.getFukitSaveField('versionChangeWarning')) versionChangeWarning();
+
+		new FlxTimer().start(2 + delay, function(timer)
+		{
+			goToNextState();
+		});
 	});
 }
 
-function goToNextState()
+function versionChangeWarning()
 {
-	MusicBeatState.skipTransIn = delay == 0;
-	MusicBeatState.skipTransOut = delay == 0;
+	daText.size = 24;
+	daText.text = 'Hewa there! Welcome to 1.2.1!\n'
+		+ 'I\'m just here to tell you about the version change format that will come with 2.1!\n\n'
+		+ 'It will be more based on the OST Volume, and there wont be a .0 update.\n'
+		+ 'It will start with .1 and increase from there '
+		+ 'until the volume is considered complete.\n\n'
+		+ '(If you play or heard of Minecraft)\n'
+		+ 'Think of it like the new Minecraft Version System with the drop system (for Java Edition).\n'
+		+ '26.1... 26.2... etc.\n\n'
+		+ 'That\'s all, enjoy the mod :D';
+	daText.screenCenter();
 
-	FlxG.switchState(new ModState('cfukit_pc'));
+	delay += 8;
 }
 
 function oxipng()
