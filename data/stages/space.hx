@@ -3,11 +3,13 @@ import flixel.effects.particles.FlxParticle;
 
 var starsBG:FlxTypedEmitter;
 
-function onStageXMLParsed() {
+function onStageXMLParsed()
+{
 	starsBG = new FlxTypedEmitter();
 	starsBG.maxSize = 100 * 10;
 
-	for (i in 0...starsBG.maxSize) {
+	for (i in 0...starsBG.maxSize)
+	{
 		var particle:FlxParticle = new FlxParticle();
 		particle.loadGraphic(Paths.image('stages/space/star'), true, 16, 16);
 
@@ -57,7 +59,8 @@ function onStageXMLParsed() {
 	// trace('sparce');
 }
 
-function postCreate() {
+function postCreate()
+{
 	cloudDAD.x = dad.getGraphicMidpoint().x;
 	cloudDAD.y = dad.getGraphicMidpoint().y + (cloudDAD.height * 1);
 	cloudDAD.animation.frameIndex = FlxG.random.int(0, 7);
@@ -72,7 +75,8 @@ function postCreate() {
 	urath.acceleration.x = 30;
 	urath.moves = true;
 
-	new FlxTimer().start(20, function(timer) {
+	new FlxTimer().start(20, function(timer)
+	{
 		urath.moves = false;
 
 		remove(urath);
@@ -81,23 +85,23 @@ function postCreate() {
 
 	var charShader = new CustomShader("dropshadowShader");
 
-    charShader.brightness = -11;
-    charShader.hue = -22;
-    charShader.saturation = -40;
-    charShader.contrast = -20;
+	charShader.brightness = -11;
+	charShader.hue = -22;
+	charShader.saturation = -40;
+	charShader.contrast = -20;
 
 	dad.shader = charShader;
-    cloudDAD.shader = charShader;
+	cloudDAD.shader = charShader;
 
 	bf.shader = charShader;
-    cloudBF.shader = charShader;
+	cloudBF.shader = charShader;
 
 	var urathShader = new CustomShader("dropshadowShader");
 
-    urathShader.brightness = -40;
-    urathShader.hue = 6;
-    urathShader.saturation = -28;
-    urathShader.contrast = -23;
+	urathShader.brightness = -40;
+	urathShader.hue = 6;
+	urathShader.saturation = -28;
+	urathShader.contrast = -23;
 
-    urath.shader = urathShader;
+	urath.shader = urathShader;
 }

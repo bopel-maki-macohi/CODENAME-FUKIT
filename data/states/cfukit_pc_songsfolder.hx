@@ -11,13 +11,13 @@ var songStarDiffSprites:Array<FunkinSprite> = [];
 var curSelect:Int = 0;
 var prevCurSelect:Int = 0;
 
-function create() {
+function create()
+{
 	FukitUtil.playMenuMusic();
 
 	songList = CoolUtil.coolTextFile(Paths.txt('songs/${data?.file ?? 'volume1'}'));
 
-	if (songList.length == 0)
-		songList = ['test'];
+	if (songList.length == 0) songList = ['test'];
 
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
@@ -25,7 +25,8 @@ function create() {
 
 	trace('${songList.length} song(s)');
 
-	if (songList.length == 0) {
+	if (songList.length == 0)
+	{
 		var txt:FunkinText;
 
 		txt = new FunkinText(0, 10, FlxG.width, 'No songs', 64, false);
@@ -37,7 +38,8 @@ function create() {
 	}
 
 	var i = 0;
-	for (song in songList) {
+	for (song in songList)
+	{
 		var songID:String = song.split('-')[0];
 		var songVariation:String = song.split('-')[1] ?? null;
 
@@ -47,8 +49,7 @@ function create() {
 
 		var starDiff = FlxG.random.int(0, 10);
 
-		if (chartMetaData.customValues?.starDiff != null)
-			starDiff = Std.parseInt(chartMetaData.customValues.starDiff);
+		if (chartMetaData.customValues?.starDiff != null) starDiff = Std.parseInt(chartMetaData.customValues.starDiff);
 
 		songStarDiffs.push(starDiff);
 
@@ -74,7 +75,8 @@ function create() {
 	add(starText);
 	starText.borderSize *= 2;
 
-	while (m < MM) {
+	while (m < MM)
+	{
 		var star:FunkinSprite = new FunkinSprite().loadGraphic(Paths.image('pc/stars/0'));
 
 		star.ID = m;
@@ -99,14 +101,16 @@ var starXPad:Float = 24;
 var starYPad:Float = 24;
 var starText:FunkinText;
 
-function parseDiff(starDiff:Int = 0) {
-	for (star in songStarDiffSprites) {
+function parseDiff(starDiff:Int = 0)
+{
+	for (star in songStarDiffSprites)
+	{
 		var spr = 1;
 
-		if (starDiff <= star.ID)
-			spr = 0;
+		if (starDiff <= star.ID) spr = 0;
 
-		if (prevStarStates[star.ID] != spr) {
+		if (prevStarStates[star.ID] != spr)
+		{
 			star.colorTransform.blueMultiplier = 5;
 			star.y -= star.height * (star.ID + 1) * .1;
 		}
@@ -119,20 +123,23 @@ function parseDiff(starDiff:Int = 0) {
 
 var canSelectStuff:Bool = true;
 
-function leaving(leaveScript:Void->Void, sfx = 1, additionalWait = 0.0) {
+function leaving(leaveScript:Void->Void, sfx = 1, additionalWait = 0.0)
+{
 	canSelectStuff = false;
 	CoolUtil.playMenuSFX(sfx);
 
 	FlxTween.tween(FlxG.camera, {alpha: 0}, .75, {startDelay: additionalWait, ease: FlxEase.sineOut});
 
-	new FlxTimer().start(0.75 + additionalWait, function(timer) {
-		if (leaveScript != null)
-			leaveScript();
+	new FlxTimer().start(0.75 + additionalWait, function(timer)
+	{
+		if (leaveScript != null) leaveScript();
 	});
 }
 
-function update(elapsed:Float) {
-	for (star in songStarDiffSprites) {
+function update(elapsed:Float)
+{
+	for (star in songStarDiffSprites)
+	{
 		var targX = (starText.x + starText.width) + starXPad + (star.width * star.ID * 1.5);
 		var targY = FlxG.height - star.height - starYPad;
 
@@ -145,52 +152,56 @@ function update(elapsed:Float) {
 		star.colorTransform.greenMultiplier = star.colorTransform.blueMultiplier;
 	}
 
-	if ((controls.BACK || songList.length == 0) && canSelectStuff) {
-		leaving(function() {
+	if ((controls.BACK || songList.length == 0) && canSelectStuff)
+	{
+		leaving(function()
+		{
 			FlxG.switchState(new ModState('cfukit_pc'));
 		}, 2, (songList.length == 0) ? 1 : 0);
 	}
 
 	prevCurSelect = curSelect;
 
-	if (controls.UP_R && canSelectStuff) {
+	if (controls.UP_R && canSelectStuff)
+	{
 		curSelect--;
 
-		if (curSelect < 0)
-			curSelect = songTexts.length - 1;
+		if (curSelect < 0) curSelect = songTexts.length - 1;
 	}
 
-	if (controls.DOWN_R && canSelectStuff) {
+	if (controls.DOWN_R && canSelectStuff)
+	{
 		curSelect++;
 
-		if (curSelect > songTexts.length - 1)
-			curSelect = 0;
+		if (curSelect > songTexts.length - 1) curSelect = 0;
 	}
 
-	if (curSelect != prevCurSelect) {
+	if (curSelect != prevCurSelect)
+	{
 		CoolUtil.playMenuSFX();
 		parseDiff(songStarDiffs[curSelect]);
 	}
 
-	if (controls.ACCEPT && canSelectStuff) {
+	if (controls.ACCEPT && canSelectStuff)
+	{
 		canSelectStuff = false;
 
 		loadSong(songList[curSelect]);
 	}
 
-	for (text in songTexts) {
+	for (text in songTexts)
+	{
 		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
 
 		text.color = 0xFFFFFF;
 
-		if (curSelect == text.ID)
-			text.color = 0xFFFF00;
+		if (curSelect == text.ID) text.color = 0xFFFF00;
 	}
 }
 
-function loadSong(song:String) {
-	if (song == null)
-		return;
+function loadSong(song:String)
+{
+	if (song == null) return;
 
 	trace(song);
 

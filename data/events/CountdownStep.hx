@@ -1,8 +1,8 @@
 var runningEvent:Bool = false;
 
-function onEvent(e) {
-	if (e.event.name != 'CountdownStep')
-		return;
+function onEvent(e)
+{
+	if (e.event.name != 'CountdownStep') return;
 
 	// trace(e.event);
 

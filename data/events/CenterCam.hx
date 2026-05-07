@@ -1,6 +1,6 @@
-function onEvent(e) {
-	if (e.event.name != 'CenterCam')
-		return;
+function onEvent(e)
+{
+	if (e.event.name != 'CenterCam') return;
 
 	// trace(e.event);
 
@@ -12,6 +12,6 @@ function onEvent(e) {
 	curCameraTarget = -1;
 	camFollow.screenCenter();
 
-    camFollow.x += params.xOffset;
-    camFollow.y += params.yOffset;
+	camFollow.x += params.xOffset;
+	camFollow.y += params.yOffset;
 }

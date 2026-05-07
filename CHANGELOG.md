@@ -1,5 +1,8 @@
 # Unreleased
 
+- All Haxe / Script files are formatted now
+    - The hxformat.json resulting in the formatting is included in the mod
+
 - Fixed missing transition in from the PC Menu when the intro length has been extended
 
 - Running with the arg "-SKIP_INTRO" will skip the intro scene

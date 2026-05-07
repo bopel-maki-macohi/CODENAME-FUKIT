@@ -3,9 +3,9 @@ import funkin.editors.charter.Charter;
 var guardTween:FlxTween;
 var flippedGuard:Bool = false;
 
-function onEvent(e) {
-	if (e.event.name != 'RAMBankGuard')
-		return;
+function onEvent(e)
+{
+	if (e.event.name != 'RAMBankGuard') return;
 
 	var params = {
 		duration: e.event.params[0],
@@ -13,15 +13,17 @@ function onEvent(e) {
 
 	// trace('RAMBankGuard: ' + params);
 
-	if (guardTween != null)
-		guardTween.cancel();
+	if (guardTween != null) guardTween.cancel();
 
 	guard.flipX = flippedGuard;
 
-	if (!flippedGuard) {
+	if (!flippedGuard)
+	{
 		guard.x = 920;
 		guardTween = FlxTween.tween(guard, {x: 200}, params.duration);
-	} else {
+	}
+	else
+	{
 		guard.x = 200;
 		guardTween = FlxTween.tween(guard, {x: 920}, params.duration);
 	}
@@ -29,16 +31,17 @@ function onEvent(e) {
 	flippedGuard = !flippedGuard;
 }
 
-
 var time:Float = 0;
 
-function update(elapsed:Float) {
-    time += elapsed * 2;
+function update(elapsed:Float)
+{
+	time += elapsed * 2;
 
-    guard.y = 400 - (Math.cos(time) * 10);
+	guard.y = 400 - (Math.cos(time) * 10);
 }
 
-function postCreate() {
+function postCreate()
+{
 	var bgShader = new CustomShader("dropshadowShader");
 
 	bgShader.brightness = -36;
