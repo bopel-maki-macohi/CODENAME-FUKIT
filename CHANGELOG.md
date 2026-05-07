@@ -1,17 +1,21 @@
 # Unreleased
 
 - The mouse is now hidden in the Song Select
-
 - Song metadata is now loaded correctly in the Song Select
 
 - All Haxe / Script files are formatted now
     - The hxformat.json resulting in the formatting is included in the mod
 
 - Fixed missing transition in from the PC Menu when the intro length has been extended
+- New Arguments:
+    - `-FORCE_DEVMODE` : Forces Developer mode
+    - `-SKIP_INTRO` : Skips the intro state
 
-- Running with the arg "-SKIP_INTRO" will skip the intro scene
-- Running with the arg "-DISABLE_MUSIC" will now set the Menu Music option to false
-- Running with the arg "-FORCE_DEVMODE" will now force developer mode
+    - `-FORCE_DISABLE_MUSIC` : Forces Menu Music to be disabled
+    - `-FORCE_ENABLE_MUSIC` : Forces Menu Music to be enabled
+
+    - `-FORCE_DISABLE_CUTSCENES` : Forces Song Cutscenes to be disabled
+    - `-FORCE_ENABLE_CUTSCENES` : Forces Song Cutscenes to be enabled
 
 - If no songs are loaded via a text file then the Song Select will now set it's song list to "test"
 - The Song Select now displays it's song list depending on a `data/songs` file (default: `volume1` if it can)
