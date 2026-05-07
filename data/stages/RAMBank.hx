@@ -29,6 +29,15 @@ function onEvent(e) {
 	flippedGuard = !flippedGuard;
 }
 
+
+var time:Float = 0;
+
+function update(elapsed:Float) {
+    time += elapsed * 2;
+
+    guard.y = 400 - (Math.cos(time) * 10);
+}
+
 function postCreate() {
 	var bgShader = new CustomShader("dropshadowShader");
 
@@ -40,7 +49,6 @@ function postCreate() {
 	doorway.shader = bgShader;
 	ground.shader = bgShader;
 	void.shader = bgShader;
-	guard.shader = bgShader;
 
 	var charShader = new CustomShader("dropshadowShader");
 
