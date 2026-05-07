@@ -5,7 +5,9 @@ import ArgUtil;
 function new()
 {
 	// store anything I want in here
-	FukitUtil.initSaveField('fukit', {});
+	FukitUtil.initSaveField('fukit', {
+		// why does the formatting do this? I have no idea...
+	});
 	FukitUtil.initFukitSaveField('versionChangeWarning', false);
 
 	if (ArgUtil.argPairExists(ArgUtil.FORCE_VERSIONCHANGEWARNING))
