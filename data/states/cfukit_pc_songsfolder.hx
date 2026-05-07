@@ -2,7 +2,7 @@ import flixel.util.FlxGradient;
 import funkin.backend.chart.Chart;
 import FukitUtil;
 
-var songs:Array<String> = CoolUtil.coolTextFile(Paths.txt('songList'));
+var songList:Array<String> = [];
 var songDatas:Array<ChartMetaData> = [];
 var songTexts:Array<FunkinText> = [];
 var songStarDiffs:Array<Int> = [];
@@ -14,13 +14,18 @@ var prevCurSelect:Int = 0;
 function create() {
 	FukitUtil.playMenuMusic();
 
+	songList = CoolUtil.coolTextFile(Paths.txt('songs/${data?.file ?? 'volume1'}'));
+
+	if (songList.length == 0)
+		songList = ['test'];
+
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
 	gradientLinear.alpha = .3;
 
-	trace('${songs.length} song(s)');
+	trace('${songList.length} song(s)');
 
-	if (songs.length == 0) {
+	if (songList.length == 0) {
 		var txt:FunkinText;
 
 		txt = new FunkinText(0, 10, FlxG.width, 'No songs', 64, false);
@@ -32,7 +37,7 @@ function create() {
 	}
 
 	var i = 0;
-	for (song in songs) {
+	for (song in songList) {
 		var songID:String = song.split('-')[0];
 		var songVariation:String = song.split('-')[1] ?? null;
 
@@ -140,10 +145,10 @@ function update(elapsed:Float) {
 		star.colorTransform.greenMultiplier = star.colorTransform.blueMultiplier;
 	}
 
-	if ((controls.BACK || songs.length == 0) && canSelectStuff) {
+	if ((controls.BACK || songList.length == 0) && canSelectStuff) {
 		leaving(function() {
 			FlxG.switchState(new ModState('cfukit_pc'));
-		}, 2, (songs.length == 0) ? 1 : 0);
+		}, 2, (songList.length == 0) ? 1 : 0);
 	}
 
 	prevCurSelect = curSelect;
@@ -170,7 +175,7 @@ function update(elapsed:Float) {
 	if (controls.ACCEPT && canSelectStuff) {
 		canSelectStuff = false;
 
-		loadSong(songs[curSelect]);
+		loadSong(songList[curSelect]);
 	}
 
 	for (text in songTexts) {

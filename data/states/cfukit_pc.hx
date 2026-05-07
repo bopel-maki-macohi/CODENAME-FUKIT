@@ -102,7 +102,7 @@ function update(elapsed:Float) {
 
 		if (FlxG.mouse.justReleased && canSelectStuff) {
 			leaving(function() {
-				FlxG.switchState(new ModState('cfukit_pc_songsfolder'));
+				FlxG.switchState(new ModState('cfukit_pc_songsfolder', {file: 'volume2'}));
 			});
 		}
 	} else

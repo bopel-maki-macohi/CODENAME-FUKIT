@@ -1,3 +1,8 @@
+# Unreleased
+
+- If no songs are loaded via a text file then the Song Select will now set it's song list to "test" 
+- The Song Select now displays it's song list depending on a `data/songs` file (default: `volume1` if it can)
+
 # 1.2 - 5/6/2026
 
 - **Added RAM ROB Song!**
