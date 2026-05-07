@@ -1,4 +1,4 @@
-# Unreleased
+# 1.2.1 - 5/7/2026
 
 - Fixed flicker of "freakyMenu" when leaving a song via the pause menu
     - I might be losing it but I hear it
