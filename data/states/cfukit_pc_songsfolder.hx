@@ -6,6 +6,7 @@ import StarSprite;
 
 var songList:Array<String> = [];
 var songTexts:Array<FunkinText> = [];
+var songScores:Array<Int> = [];
 var songStarDiffs:Array<Int> = [];
 var songStarDiffSprites:Array<StarSprite> = [];
 var curSelect:Int = 0;
@@ -22,6 +23,8 @@ function create()
 	makeSongTexts();
 
 	makeStars();
+
+	makeScoreText();
 
 	FlxG.mouse.visible = false;
 
@@ -63,7 +66,9 @@ function makeSongTexts()
 		var songVariation:String = song.split('-')[1];
 		songID = StringTools.replace(songID, '_', '');
 
-		if (StringTools.startsWith(song, '_') && FunkinSave.getSongHighscore(songID, 'normal', songVariation).score == 0) continue;
+		songScores.push(FunkinSave.getSongHighscore(songID, 'normal', songVariation).score);
+
+		if (StringTools.startsWith(song, '_') && songScores[i] == 0) continue;
 
 		var chartMetaData:ChartMetaData = Chart.loadChartMeta(songID, songVariation ?? null, 'normal');
 
@@ -111,6 +116,19 @@ function makeStars()
 	starText.y -= songStarDiffSprites[0].starYPad + songStarDiffSprites[0].height / 2;
 }
 
+var scoreText:FunkinText;
+var lerpScore:Float = 0;
+
+function makeScoreText()
+{
+	scoreText = new FunkinText(FlxG.width, 10, FlxG.width, 'Score: 0000000000', 32);
+	add(scoreText);
+	scoreText.borderSize *= 2;
+	scoreText.alignment = 'right';
+
+	scoreText.x -= scoreText.width + 10;
+}
+
 function updateStarsForDifficulty(starDiff:Int = 0)
 {
 	for (star in songStarDiffSprites) star.setState((starDiff <= star.ID) ? 0 : 1);
@@ -143,6 +161,9 @@ function update(elapsed:Float)
 		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
 		text.color = (curSelect == text.ID) ? 0xFFFF00 : 0xFFFFFF;
 	}
+
+	lerpScore = CoolUtil.fpsLerp(lerpScore, songScores[curSelect], 0.4);
+	scoreText.text = 'Score: ' + StringTools.lpad('${Math.round(lerpScore)}', '0', 10);
 
 	if ((controls.BACK || songList.length == 0) && canSelectStuff)
 	{
