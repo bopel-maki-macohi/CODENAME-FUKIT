@@ -1,5 +1,6 @@
 import flixel.util.FlxGradient;
 import funkin.backend.chart.Chart;
+import funkin.savedata.FunkinSave;
 import FukitUtil;
 
 var songList:Array<String> = [];
@@ -36,7 +37,7 @@ function makeSongList()
 {
 	songList = CoolUtil.coolTextFile(Paths.txt('songs/${data?.file ?? 'volume1'}'));
 
-	trace('${songList.length} song(s)');
+	trace('${songList.length} loaded song(s)');
 
 	if (songList.length == 0)
 	{
@@ -56,10 +57,15 @@ function makeSongTexts()
 	var i = 0;
 	for (song in songList)
 	{
-		var chartMetaData:ChartMetaData = Chart.loadChartMeta(song.split('-')[0], song.split('-')[1] ?? null, 'normal');
+		var songID:String = song.split('-')[0];
+		var songVariation:String = song.split('-')[1];
+		songID = StringTools.replace(songID, '_', '');
 
-		if (chartMetaData.difficulties.length == 0)
-			trace('"$song" has no difficulties (no meta?)');
+		if (StringTools.startsWith(song, '_') && FunkinSave.getSongHighscore(songID, 'normal', songVariation).score == 0) continue;
+
+		var chartMetaData:ChartMetaData = Chart.loadChartMeta(songID, songVariation ?? null, 'normal');
+
+		if (chartMetaData.difficulties.length == 0) trace('"$song" has no difficulties (no meta?)');
 
 		var starDiff = FlxG.random.int(0, 10);
 		if (chartMetaData.customValues?.starDiff != null) starDiff = Std.parseInt(chartMetaData.customValues.starDiff);
@@ -74,6 +80,8 @@ function makeSongTexts()
 
 		i++;
 	}
+
+	trace('${songTexts.length} made song text(s)');
 }
 
 function makeStars()

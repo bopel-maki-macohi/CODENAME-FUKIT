@@ -11,8 +11,9 @@
 - Running with the arg "-DISABLE_MUSIC" will now set the Menu Music option to false
 - Running with the arg "-FORCE_DEVMODE" will now force developer mode
 
-- If no songs are loaded via a text file then the Song Select will now set it's song list to "test" 
+- If no songs are loaded via a text file then the Song Select will now set it's song list to "test"
 - The Song Select now displays it's song list depending on a `data/songs` file (default: `volume1` if it can)
+    - Songs prefixes with an underscore will be checked for a (non-zero) highscore before being added as a text
 
 # 1.2 - 5/6/2026
 
