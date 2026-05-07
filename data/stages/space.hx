@@ -79,6 +79,9 @@ function postCreate()
 	cloudDAD.y = dad.getGraphicMidpoint().y + (cloudDAD.height * 1);
 	cloudBF.y = bf.getGraphicMidpoint().y + (cloudBF.height * 1.5);
 
+	cloudDAD.x = dad.getGraphicMidpoint().x;
+	cloudBF.x = bf.getGraphicMidpoint().x;
+
 	urath.screenCenter();
 
 	urath.velocity.x = 0;
@@ -118,8 +121,8 @@ function postCreate()
 
 function update()
 {
-	cloudDAD.x = dad.getGraphicMidpoint().x;
-	cloudBF.x = bf.getGraphicMidpoint().x;
+	if (dadTween != null) cloudDAD.x = dad.getGraphicMidpoint().x;
+	if (bfTween != null) cloudBF.x = bf.getGraphicMidpoint().x;
 }
 
 var bfTween:FlxTween;
