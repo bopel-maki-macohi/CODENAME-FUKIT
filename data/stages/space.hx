@@ -69,6 +69,18 @@ function onStageXMLParsed()
 		dadTween.cancel();
 		dadTween = null;
 	}
+
+	if (bfCloudTween != null)
+	{
+		bfCloudTween.cancel();
+		bfCloudTween = null;
+	}
+
+	if (dadCloudTween != null)
+	{
+		dadCloudTween.cancel();
+		dadCloudTween = null;
+	}
 }
 
 function postCreate()
@@ -119,14 +131,10 @@ function postCreate()
 	urath.shader = urathShader;
 }
 
-function update()
-{
-	if (dadTween != null) cloudDAD.x = dad.getGraphicMidpoint().x;
-	if (bfTween != null) cloudBF.x = bf.getGraphicMidpoint().x;
-}
-
 var bfTween:FlxTween;
+var bfCloudTween:FlxTween;
 var dadTween:FlxTween;
+var dadCloudTween:FlxTween;
 
 function spaceZoomAway(durStr:String, bsdStr:String)
 {
@@ -139,4 +147,7 @@ function spaceZoomAway(durStr:String, bsdStr:String)
 
 	bfTween = FlxTween.tween(bf, {x: bf.x - FlxG.width * 4}, duration, {startDelay: bfStartDelay, ease: ease});
 	dadTween = FlxTween.tween(dad, {x: dad.x - FlxG.width * 4}, duration, {ease: ease});
+
+	bfCloudTween = FlxTween.tween(cloudBF, {x: cloudBF.x - FlxG.width * 4}, duration, {startDelay: bfStartDelay, ease: ease});
+	dadCloudTween = FlxTween.tween(cloudDAD, {x: cloudDAD.x - FlxG.width * 4}, duration, {ease: ease});
 }

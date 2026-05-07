@@ -5,4 +5,5 @@
 	<anim name="singRIGHT" anim="alikit anim right" x="-7" y="-10"/>
 	<anim name="singLEFT" anim="alikit anim left" x="111" y="-15"/>
 	<anim name="singUP" anim="alikit anim up" x="47" y="-45"/>
+	<anim name="bye!" anim="bye!" label="true" x="124" y="-2"/>
 </character>
