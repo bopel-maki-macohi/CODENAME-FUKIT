@@ -1,5 +1,7 @@
 # Unreleased
 
+- Song metadata is now loaded correctly in the Song Select
+
 - All Haxe / Script files are formatted now
     - The hxformat.json resulting in the formatting is included in the mod
 

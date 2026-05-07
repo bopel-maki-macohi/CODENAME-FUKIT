@@ -3,7 +3,6 @@ import funkin.backend.chart.Chart;
 import FukitUtil;
 
 var songList:Array<String> = [];
-var songDatas:Array<ChartMetaData> = [];
 var songTexts:Array<FunkinText> = [];
 var songStarDiffs:Array<Int> = [];
 var prevStarStates:Array<Int> = [];
@@ -57,8 +56,10 @@ function makeSongTexts()
 	var i = 0;
 	for (song in songList)
 	{
-		var chartMetaData:ChartMetaData = Chart.loadChartMeta(song.split('-')[0], 'normal', song.split('-')[1] ?? null);
-		songDatas.push(chartMetaData);
+		var chartMetaData:ChartMetaData = Chart.loadChartMeta(song.split('-')[0], song.split('-')[1] ?? null, 'normal');
+
+		if (chartMetaData.difficulties.length == 0)
+			trace('"$song" has no difficulties (no meta?)');
 
 		var starDiff = FlxG.random.int(0, 10);
 		if (chartMetaData.customValues?.starDiff != null) starDiff = Std.parseInt(chartMetaData.customValues.starDiff);
