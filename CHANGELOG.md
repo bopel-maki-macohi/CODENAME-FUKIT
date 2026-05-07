@@ -7,6 +7,8 @@
 - [oxipng](https://github.com/oxipng/oxipng) has been run on all png files
     - This is not threaded (import doesn't work) so it will cause lag
     - an oxipng command now runs if it detects a ".dev" folder in the mod directory
+        - Can be disabled by running the codename engine executable with the arg "NO_OXIPNG"
+            - I added an entire arg system just for this one thing, but hey it can be used for other cool things too!
 - The FPS / Debug display is disabled by default when openning CNE and this is the loaded mod
 - Added Option to toggle cutscenes
 - Fixed FreakyMenu playing when moving to and out the Gameplay menu in the options menu

@@ -1,5 +1,6 @@
 import FukitUtil;
 import funkin.backend.system.framerate.Framerate;
+import ArgUtil;
 
 function new() {
 	FukitUtil.initSaveField('fukit_menuMusic', true);
@@ -7,4 +8,6 @@ function new() {
 	FukitUtil.setSaveField('fukit_devMode', Paths.getFolderDirectories('.').contains('.dev'));
 
 	Framerate.debugMode = 0;
+
+	ArgUtil.logExistingArgPairs();
 }

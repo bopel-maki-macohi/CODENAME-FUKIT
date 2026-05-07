@@ -1,3 +1,5 @@
+package;
+
 class FukitUtil {
 	public static var MOD_VERSION:String = Flags.customFlags.get('MOD_VERSION');
 
@@ -9,7 +11,7 @@ class FukitUtil {
 	}
 
 	public static function setSaveField(field:String, value:Dynamic = null) {
-			Reflect.setField(FlxG.save.data, field, value);
+		Reflect.setField(FlxG.save.data, field, value);
 	}
 
 	public static function getSaveField(field:String, defaultValue:Dynamic = null) {
