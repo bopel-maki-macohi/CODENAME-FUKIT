@@ -23,6 +23,8 @@ function create()
 
 	makeStars();
 
+	FlxG.mouse.visible = false;
+
 	changeSelection(0);
 }
 

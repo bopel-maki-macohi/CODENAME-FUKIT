@@ -1,5 +1,7 @@
 # Unreleased
 
+- The mouse is now hidden in the Song Select
+
 - Song metadata is now loaded correctly in the Song Select
 
 - All Haxe / Script files are formatted now
