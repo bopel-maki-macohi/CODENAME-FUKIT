@@ -116,7 +116,7 @@ var starXPad:Float = 24;
 var starYPad:Float = 24;
 var starText:FunkinText;
 
-function parseDiff(starDiff:Int = 0)
+function updateStarsForDifficulty(starDiff:Int = 0)
 {
 	for (star in songStarDiffSprites)
 	{
@@ -167,7 +167,6 @@ function update(elapsed:Float)
 	for (text in songTexts)
 	{
 		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
-
 		text.color = (curSelect == text.ID) ? 0xFFFF00 : 0xFFFFFF;
 	}
 
@@ -182,7 +181,7 @@ function update(elapsed:Float)
 	if (controls.ACCEPT && canSelectStuff)
 	{
 		canSelectStuff = false;
-		loadSong(songList[curSelect]);
+		playSong(songList[curSelect]);
 	}
 }
 
@@ -198,11 +197,11 @@ function changeSelection(amount:Int)
 	if (curSelect != prevCurSelect)
 	{
 		CoolUtil.playMenuSFX();
-		parseDiff(songStarDiffs[curSelect]);
+		updateStarsForDifficulty(songStarDiffs[curSelect]);
 	}
 }
 
-function loadSong(song:String)
+function playSong(song:String)
 {
 	if (song == null) return;
 	trace(song);
