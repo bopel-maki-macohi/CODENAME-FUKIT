@@ -4,8 +4,12 @@ class FukitUtil {
 	public static function initSaveField(field:String, defaultValue:Dynamic = null) {
 		if (Reflect.field(FlxG.save.data, field) == null && defaultValue != null) {
 			trace('Setting Save Field "$field" to "$defaultValue"');
-			Reflect.setField(FlxG.save.data, field, defaultValue);
+			setSaveField(field, defaultValue);
 		}
+	}
+
+	public static function setSaveField(field:String, value:Dynamic = null) {
+			Reflect.setField(FlxG.save.data, field, value);
 	}
 
 	public static function getSaveField(field:String, defaultValue:Dynamic = null) {
