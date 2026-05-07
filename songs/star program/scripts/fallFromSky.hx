@@ -1,19 +1,20 @@
 import flixel.effects.particles.FlxEmitter.FlxTypedEmitter;
 import flixel.effects.particles.FlxParticle;
+import funkin.editors.charter.Charter;
 
 var underTale = false;
 
 function onStartCountdown(e) {
-	if (!underTale) {
+	if (!underTale && !Charter.startHere) {
 		e.cancel();
 		underTale = true;
 
 		burstStars();
 
 		Conductor.songPosition -= Conductor.crochet * introLength - Conductor.songOffset;
-		var len = 5;
+		var len = (playCutscenes) ? 1 : 2.5;
 
-		new FlxTimer().start(len * 0.5, function(timer) {
+		new FlxTimer().start(len, function(timer) {
 			startCountdown();
 		});
 	}
