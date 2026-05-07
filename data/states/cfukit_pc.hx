@@ -115,7 +115,7 @@ function update(elapsed:Float)
 		{
 			leaving(function()
 			{
-				FlxG.switchState(new ModState('cfukit_pc_songsfolder', {file: 'volume2'}));
+				FlxG.switchState(new ModState('cfukit_pc_songsfolder', {file: 'volume1'}));
 			});
 		}
 	}

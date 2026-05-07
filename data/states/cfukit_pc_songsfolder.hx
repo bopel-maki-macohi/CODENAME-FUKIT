@@ -3,98 +3,105 @@ import funkin.backend.chart.Chart;
 import FukitUtil;
 
 var songList:Array<String> = [];
+
 var songDatas:Array<ChartMetaData> = [];
 var songTexts:Array<FunkinText> = [];
+
 var songStarDiffs:Array<Int> = [];
 var prevStarStates:Array<Int> = [];
 var songStarDiffSprites:Array<FunkinSprite> = [];
+
 var curSelect:Int = 0;
-var prevCurSelect:Int = 0;
+var prevCurSelect:Int = -10;
 
 function create()
 {
 	FukitUtil.playMenuMusic();
 
-	songList = CoolUtil.coolTextFile(Paths.txt('songs/${data?.file ?? 'volume1'}'));
+	makeGradient();
 
-	if (songList.length == 0) songList = ['test'];
+	makeSongList();
 
+	makeSongTexts();
+
+	makeStars();
+
+	changeSelection(0);
+}
+
+function makeGradient()
+{
 	var gradientLinear:FlxSprite = FlxGradient.createGradientFlxSprite(FlxG.width, FlxG.height, [0xFFFFFFFF, 0xFFA1C0D9]);
 	add(gradientLinear);
 	gradientLinear.alpha = .3;
+}
+
+function makeSongList()
+{
+	songList = CoolUtil.coolTextFile(Paths.txt('songs/${data?.file ?? 'volume1'}'));
 
 	trace('${songList.length} song(s)');
 
 	if (songList.length == 0)
 	{
-		var txt:FunkinText;
+		songList = ['test'];
 
-		txt = new FunkinText(0, 10, FlxG.width, 'No songs', 64, false);
+		var txt:FunkinText = new FunkinText(0, 10, FlxG.width, 'No songs', 64, false);
 		txt.alignment = 'center';
 		txt.color = 0x000000;
 		txt.screenCenter();
 
 		add(txt);
 	}
+}
 
+function makeSongTexts()
+{
 	var i = 0;
 	for (song in songList)
 	{
-		var songID:String = song.split('-')[0];
-		var songVariation:String = song.split('-')[1] ?? null;
-
-		var chartMetaData:ChartMetaData = Chart.loadChartMeta(songID, 'normal', songVariation);
-
+		var chartMetaData:ChartMetaData = Chart.loadChartMeta(song.split('-')[0], 'normal', song.split('-')[1] ?? null);
 		songDatas.push(chartMetaData);
 
 		var starDiff = FlxG.random.int(0, 10);
-
 		if (chartMetaData.customValues?.starDiff != null) starDiff = Std.parseInt(chartMetaData.customValues.starDiff);
-
 		songStarDiffs.push(starDiff);
 
-		var txt:FunkinText;
-
-		txt = new FunkinText(0, 10, FlxG.width, chartMetaData?.displayName ?? chartMetaData.name, 64, false);
+		var txt:FunkinText = new FunkinText(0, -FlxG.height, FlxG.width, chartMetaData?.displayName ?? chartMetaData.name, 64, false);
 		txt.alignment = 'center';
 		txt.screenCenter();
 		txt.ID = i;
-
-		txt.y = -FlxG.height;
-
 		add(txt);
 		songTexts.push(txt);
 
 		i++;
 	}
+}
 
+function makeStars()
+{
 	var MM = 10;
-	var m = 0;
+	var i = 0;
 
 	starText = new FunkinText(32, FlxG.height - starYPad, 0, 'Stars: ', 32);
 	add(starText);
 	starText.borderSize *= 2;
 
-	while (m < MM)
+	while (i < MM)
 	{
 		var star:FunkinSprite = new FunkinSprite().loadGraphic(Paths.image('pc/stars/0'));
-
-		star.ID = m;
-
+		star.ID = i;
 		star.x = FlxG.width * (star.ID + 1) * 2;
 		star.y = FlxG.height * (star.ID + 1) * 2;
 
 		songStarDiffSprites.push(star);
 		add(star);
 
-		m++;
-
+		i++;
 		prevStarStates.push(0);
 	}
 
 	starText.y -= songStarDiffSprites[0].height / 2;
-
-	parseDiff(songStarDiffs[curSelect]);
 }
 
 var starXPad:Float = 24;
@@ -105,9 +112,7 @@ function parseDiff(starDiff:Int = 0)
 {
 	for (star in songStarDiffSprites)
 	{
-		var spr = 1;
-
-		if (starDiff <= star.ID) spr = 0;
+		var spr = (starDiff <= star.ID) ? 0 : 1;
 
 		if (prevStarStates[star.ID] != spr)
 		{
@@ -116,7 +121,6 @@ function parseDiff(starDiff:Int = 0)
 		}
 
 		prevStarStates[star.ID] = spr;
-
 		star.loadGraphic(Paths.image('pc/stars/$spr'));
 	}
 }
@@ -140,17 +144,17 @@ function update(elapsed:Float)
 {
 	for (star in songStarDiffSprites)
 	{
-		var targX = (starText.x + starText.width) + starXPad + (star.width * star.ID * 1.5);
-		var targY = FlxG.height - star.height - starYPad;
-
-		star.x = CoolUtil.fpsLerp(star.x, targX, 0.1);
-		star.y = CoolUtil.fpsLerp(star.y, targY, 0.1);
+		star.x = CoolUtil.fpsLerp(star.x, (starText.x + starText.width) + starXPad + (star.width * star.ID * 1.5), 0.1);
+		star.y = CoolUtil.fpsLerp(star.y, FlxG.height - star.height - starYPad, 0.1);
 
 		star.colorTransform.blueMultiplier = CoolUtil.fpsLerp(star.colorTransform.blueMultiplier, 1, 0.1);
-
-		star.colorTransform.redMultiplier = star.colorTransform.blueMultiplier;
-		star.colorTransform.greenMultiplier = star.colorTransform.blueMultiplier;
+		star.colorTransform.redMultiplier = star.colorTransform.greenMultiplier = star.colorTransform.blueMultiplier;
 	}
+
+	prevCurSelect = curSelect;
+
+	if (controls.UP_R) changeSelection(-1);
+	if (controls.DOWN_R) changeSelection(1);
 
 	if ((controls.BACK || songList.length == 0) && canSelectStuff)
 	{
@@ -160,21 +164,21 @@ function update(elapsed:Float)
 		}, 2, (songList.length == 0) ? 1 : 0);
 	}
 
-	prevCurSelect = curSelect;
-
-	if (controls.UP_R && canSelectStuff)
+	if (controls.ACCEPT && canSelectStuff)
 	{
-		curSelect--;
-
-		if (curSelect < 0) curSelect = songTexts.length - 1;
+		canSelectStuff = false;
+		loadSong(songList[curSelect]);
 	}
+}
 
-	if (controls.DOWN_R && canSelectStuff)
-	{
-		curSelect++;
+function changeSelection(amount:Int)
+{
+	if (!canSelectStuff) return;
 
-		if (curSelect > songTexts.length - 1) curSelect = 0;
-	}
+	curSelect += amount;
+
+	if (curSelect < 0) curSelect = songTexts.length - 1;
+	if (curSelect > songTexts.length - 1) curSelect = 0;
 
 	if (curSelect != prevCurSelect)
 	{
@@ -182,27 +186,17 @@ function update(elapsed:Float)
 		parseDiff(songStarDiffs[curSelect]);
 	}
 
-	if (controls.ACCEPT && canSelectStuff)
-	{
-		canSelectStuff = false;
-
-		loadSong(songList[curSelect]);
-	}
-
 	for (text in songTexts)
 	{
 		text.y = CoolUtil.fpsLerp(text.y, 320 + ((text.ID - curSelect) * 64), 0.1);
 
-		text.color = 0xFFFFFF;
-
-		if (curSelect == text.ID) text.color = 0xFFFF00;
+		text.color = (curSelect == text.ID) ? 0xFFFF00 : 0xFFFFFF;
 	}
 }
 
 function loadSong(song:String)
 {
 	if (song == null) return;
-
 	trace(song);
 
 	var songID:String = song.split('-')[0];
