@@ -22,6 +22,8 @@
 
 ## Misc
 
+- You can now skip the intro screen by pressing your ACCEPT keybind, only if there is a delay before skipping naturally
+- A message about the version system change displays in the intro screen
 - Fixed flicker of "freakyMenu" when leaving a song via the pause menu
   - I might be losing it but I heard a flicker of it
 
@@ -35,6 +37,7 @@
 - New Arguments:
   - `-FORCE_DEVMODE` : Forces Developer mode
   - `-SKIP_INTRO` : Skips the intro state
+  - `-FORCE_VERSIONCHANGEWARNING` : Forces the Version System change message to be visible
 
 # 1.2 - 5/6/2026
 

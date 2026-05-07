@@ -93,3 +93,9 @@ function oxipng()
 		process.close();
 	});
 }
+
+function update(e)
+{
+	if (controls.ACCEPT && delay > 0)
+		goToNextState();
+}
