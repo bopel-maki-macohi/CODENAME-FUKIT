@@ -76,6 +76,9 @@ function postCreate()
 	cloudDAD.animation.frameIndex = FlxG.random.int(0, 7);
 	cloudBF.animation.frameIndex = FlxG.random.int(0, 7);
 
+	cloudDAD.y = dad.getGraphicMidpoint().y + (cloudDAD.height * 1);
+	cloudBF.y = bf.getGraphicMidpoint().y + (cloudBF.height * 1.5);
+
 	urath.screenCenter();
 
 	urath.velocity.x = 0;
@@ -116,10 +119,7 @@ function postCreate()
 function update()
 {
 	cloudDAD.x = dad.getGraphicMidpoint().x;
-	cloudDAD.y = dad.getGraphicMidpoint().y + (cloudDAD.height * 1);
-
 	cloudBF.x = bf.getGraphicMidpoint().x;
-	cloudBF.y = bf.getGraphicMidpoint().y + (cloudBF.height * 1.5);
 }
 
 var bfTween:FlxTween;
@@ -127,9 +127,6 @@ var dadTween:FlxTween;
 
 function spaceZoomAway(durStr:String, bsdStr:String)
 {
-	trace(durStr);
-	trace(bsdStr);
-
 	if (durStr == null || durStr == '') durStr = '5';
 	if (bsdStr == null || bsdStr == '') bsdStr = '.5';
 
