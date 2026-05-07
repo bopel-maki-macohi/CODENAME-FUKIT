@@ -4,6 +4,7 @@
 - **Added STAR PROGRAM Song!**
     - First song with dialogue!
 
+- The FPS / Debug display is disabled by default when openning CNE and this is the loaded mod
 - Added Option to toggle cutscenes
 - Fixed FreakyMenu playing when moving to and out the Gameplay menu in the options menu
 - Fixed flickers of "FreakyMenu" appearing in places when the Menu Music is disabled
