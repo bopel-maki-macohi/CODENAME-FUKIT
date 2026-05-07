@@ -3,9 +3,10 @@ package;
 class ArgUtil {
 	public static var OXIPNG:Array<String> = ['OXIPNG', 'NO_OXIPNG'];
 	public static var FORCE_DEVMODE:Array<String> = ['FORCE_DEVMODE'];
+	public static var DISABLE_MUSIC:Array<String> = ['DISABLE_MUSIC'];
 
 	public static function logExistingArgPairs() {
-		logArgPairs([OXIPNG, FORCE_DEVMODE]);
+		logArgPairs([OXIPNG, FORCE_DEVMODE, DISABLE_MUSIC]);
 	}
 
 	public static function logArgPairs(argPairs:Array<Array<String>>) {

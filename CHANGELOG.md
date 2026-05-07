@@ -1,5 +1,6 @@
 # Unreleased
 
+- Running with the arg "-DISABLE_MUSIC" will now set the Menu Music option to false
 - Running with the arg "-FORCE_DEVMODE" will now force developer mode
 
 - If no songs are loaded via a text file then the Song Select will now set it's song list to "test" 
