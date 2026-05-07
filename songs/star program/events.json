@@ -92,6 +92,14 @@
 			],
 			"time": 67200,
 			"name": "CenterCam"
+		},
+		{
+			"params": [
+				"spaceZoomAway",
+				"5,"
+			],
+			"time": 67200,
+			"name": "HScript Call"
 		}
 	]
 }

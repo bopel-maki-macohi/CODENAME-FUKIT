@@ -1,5 +1,9 @@
 # 1.2.1 - 5/7/2026
 
+## Songs
+
+- STAR PROGRAM : Bf and Alikit speed away now at the end of the song
+
 ## Song Select Menu
 
 - Added Score text
