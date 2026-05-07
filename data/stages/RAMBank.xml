@@ -1,4 +1,4 @@
-<stage zoom="1.0" name="RAMBank" folder="stages/RAMBank/" startCamPosY="200" startCamPosX="800">
+<stage zoom="1.0" name="RAMBank" folder="stages/RAMBank/" startCamPosY="310" startCamPosX="500">
 	<solid name="void" color="#2D3235" width="1920" height="1080" scroll="0" x="-200" y="-300" />
 
 	<sprite name="guard" sprite="guard" x="920" y="400" type="beat">
