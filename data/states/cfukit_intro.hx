@@ -9,7 +9,7 @@ var delay:Float = 0;
 
 function create()
 {
-	if (ArgUtil.argPairNotCancelled(ArgUtil.SKIP_INTRO)) goToNextState();
+	if (ArgUtil.argPairExists(ArgUtil.SKIP_INTRO)) goToNextState();
 	else
 		intro();
 }

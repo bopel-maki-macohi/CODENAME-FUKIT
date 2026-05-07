@@ -38,7 +38,7 @@ class ArgUtil
 
 	public static function argPairExists(argPair:Array<String>):Bool return argExists(argPair[0]) && !argPairNotCancelled(argPair);
 
-	public static function argPairNotCancelled(argPair:Array<String>):Bool return !argExists(argPair[1]);
+	public static function argPairNotCancelled(argPair:Array<String>):Bool return (argPair[1] == null) ? true : !argExists(argPair[1]);
 
 	public static function argExists(arg:String):Bool return Sys.args().contains('-' + arg);
 }
