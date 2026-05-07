@@ -48,6 +48,7 @@ function intro()
 
 function versionChangeWarning()
 {
+	FukitUtil.setFukitSaveField('versionChangeWarning', true);
 	daText.size = 24;
 	daText.text = 'Hewa there! Welcome to 1.2.1!\n'
 		+ 'I\'m just here to tell you about the version change format that will come with 2.1!\n\n'
