@@ -6,7 +6,7 @@ class PCApp extends FunkinSprite
 	public var overlapped:Bool = false;
 
 	public var selectionCondition:Bool = true;
-    public var selectionFunction:Dynamic = null;
+	public var selectionFunction:Dynamic = null;
 
 	public function new(app:String)
 	{

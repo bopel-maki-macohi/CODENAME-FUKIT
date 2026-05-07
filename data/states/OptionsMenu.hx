@@ -14,6 +14,5 @@ function postCreate()
 
 function postUpdate()
 {
-	if (controls.ACCEPT && !FukitUtil.getSaveField('fukit_menuMusic'))
-		FlxG.sound.music.stop();
+	if (controls.ACCEPT && !FukitUtil.getSaveField('fukit_menuMusic')) FlxG.sound.music.stop();
 }

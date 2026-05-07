@@ -2,12 +2,12 @@ import flixel.util.FlxGradient;
 import funkin.backend.chart.Chart;
 import funkin.savedata.FunkinSave;
 import FukitUtil;
+import StarSprite;
 
 var songList:Array<String> = [];
 var songTexts:Array<FunkinText> = [];
 var songStarDiffs:Array<Int> = [];
-var prevStarStates:Array<Int> = [];
-var songStarDiffSprites:Array<FunkinSprite> = [];
+var songStarDiffSprites:Array<StarSprite> = [];
 var curSelect:Int = 0;
 var prevCurSelect:Int = -10;
 
@@ -86,51 +86,34 @@ function makeSongTexts()
 	trace('${songTexts.length} made song text(s)');
 }
 
+var starText:FunkinText;
+
 function makeStars()
 {
 	var MM = 10;
 	var i = 0;
 
-	starText = new FunkinText(32, FlxG.height - starYPad, 0, 'Stars: ', 32);
+	starText = new FunkinText(32, FlxG.height, 0, 'Stars: ', 32);
 	add(starText);
 	starText.borderSize *= 2;
 
 	while (i < MM)
 	{
-		var star:FunkinSprite = new FunkinSprite().loadGraphic(Paths.image('pc/stars/0'));
-		star.ID = i;
-		star.x = FlxG.width * (star.ID + 1) * 2;
-		star.y = FlxG.height * (star.ID + 1) * 2;
+		var star:StarSprite = new StarSprite(i, 0);
+		star.starXPad += starText.x + starText.width;
 
 		songStarDiffSprites.push(star);
 		add(star);
 
 		i++;
-		prevStarStates.push(0);
 	}
 
-	starText.y -= songStarDiffSprites[0].height / 2;
+	starText.y -= songStarDiffSprites[0].starYPad + songStarDiffSprites[0].height / 2;
 }
-
-var starXPad:Float = 24;
-var starYPad:Float = 24;
-var starText:FunkinText;
 
 function updateStarsForDifficulty(starDiff:Int = 0)
 {
-	for (star in songStarDiffSprites)
-	{
-		var spr = (starDiff <= star.ID) ? 0 : 1;
-
-		if (prevStarStates[star.ID] != spr)
-		{
-			star.colorTransform.blueMultiplier = 5;
-			star.y -= star.height * (star.ID + 1) * .1;
-		}
-
-		prevStarStates[star.ID] = spr;
-		star.loadGraphic(Paths.image('pc/stars/$spr'));
-	}
+	for (star in songStarDiffSprites) star.setState((starDiff <= star.ID) ? 0 : 1);
 }
 
 var canSelectStuff:Bool = true;
@@ -150,15 +133,6 @@ function leaving(leaveScript:Void->Void, sfx = 1, additionalWait = 0.0)
 
 function update(elapsed:Float)
 {
-	for (star in songStarDiffSprites)
-	{
-		star.x = CoolUtil.fpsLerp(star.x, (starText.x + starText.width) + starXPad + (star.width * star.ID * 1.5), 0.1);
-		star.y = CoolUtil.fpsLerp(star.y, FlxG.height - star.height - starYPad, 0.1);
-
-		star.colorTransform.blueMultiplier = CoolUtil.fpsLerp(star.colorTransform.blueMultiplier, 1, 0.1);
-		star.colorTransform.redMultiplier = star.colorTransform.greenMultiplier = star.colorTransform.blueMultiplier;
-	}
-
 	prevCurSelect = curSelect;
 
 	if (controls.UP_R) changeSelection(-1);

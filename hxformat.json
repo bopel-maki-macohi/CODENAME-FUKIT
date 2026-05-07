@@ -165,7 +165,7 @@
         "ifElseSemicolonNextLine": true,
         "expressionIf": "same",
         "expressionIfWithBlocks": false,
-        "forBody": "next",
+        "forBody": "same",
         "comprehensionFor": "same",
         "whileBody": "next",
         "doWhileBody": "next",
