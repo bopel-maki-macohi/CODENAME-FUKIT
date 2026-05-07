@@ -2,6 +2,7 @@
 
 ## Songs
 
+- Cutscenes are disabled in charting mode now
 - STAR PROGRAM : Bf and Alikit speed away now at the end of the song
 
 ## Song Select Menu
